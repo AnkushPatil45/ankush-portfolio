@@ -1,22 +1,4 @@
-/* 1.1 - ARCHITECTURAL GRID REFINEMENT */
-.system-grid-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 999;
-    /* Creating a secondary, finer grid for depth */
-    background-image: 
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 20px 20px; /* Finer mesh than the primary grid */
-    opacity: 0.4;
-}
-
-/* 1.2 - THE SCANLINE EFFECT: TERMINAL DEPTH */
-/* REPLACE WITH THIS */
+/* 1.1 - SYSTEM SCANLINES: THE TERMINAL FEEL */
 body::before {
     content: "";
     position: fixed;
@@ -24,6 +6,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Horizontal lines that mimic a high-res monitor */
     background: linear-gradient(
         rgba(18, 16, 16, 0) 50%, 
         var(--grid-line) 50%
@@ -31,11 +14,10 @@ body::before {
     background-size: 100% 4px;
     z-index: 1000;
     pointer-events: none;
-    opacity: 0.1; /* Reduced opacity for a cleaner look */
+    opacity: 0.1; /* Keeps the white background clean but textured */
 }
 
-/* 1.3 - THE VIGNETTE: FOCUSING THE AUDIT */
-/* REPLACE WITH THIS */
+/* 1.2 - VIGNETTE PROTOCOL: CORNER DEPTH */
 body::after {
     content: "";
     position: fixed;
@@ -43,6 +25,7 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Soft corner shadow to focus center-screen content */
     background: radial-gradient(
         circle, 
         transparent 70%, 
@@ -52,111 +35,63 @@ body::after {
     pointer-events: none;
 }
 
-/* Specific override for Dark Mode to keep it moody */
+/* 1.3 - DARK MODE VIGNETTE OVERRIDE */
 [data-theme="dark"] body::after {
-    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+    background: radial-gradient(
+        circle, 
+        transparent 40%, 
+        rgba(0, 0, 0, 0.4) 100%
+    );
 }
-
-/* 1.4 - SYSTEM NOISE: SUBTLE TEXTURE */
-.audit-theme {
-    position: relative;
-}
-
-.audit-theme::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Subtle grain */
-    opacity: 0.02;
-    z-index: 998;
-    pointer-events: none;
-}
-/* 2.1 - CUSTOM CROSSHAIR REFINEMENT */
-html, body {
-    cursor: crosshair;
-}
-
-/* 2.2 - THE STATUS BADGE: DYNAMIC UI */
-.status-indicator {
-    position: relative;
-}
-
-.status-indicator::after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid var(--risk-low);
-    border-radius: 50%;
+/* 2.1 - REVEAL PROTOCOL: STAGGERED ENTRANCE */
+.reveal-hidden {
     opacity: 0;
-    animation: sonar 2s infinite;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@keyframes sonar {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(2.5); opacity: 0; }
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* 2.3 - ARTIFACT GLOW STATES */
+/* 2.2 - THE GLITCH ANCHOR: DATA DECODING */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+/* 2.3 - INTERACTIVE CARDS: TACTILE FEEDBACK */
 .artifact-card {
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--bg-secondary);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.artifact-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(50, 145, 255, 0.15);
 }
 
 .artifact-card::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.03),
-        transparent
-    );
-    transition: 0.5s;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.4s ease;
 }
 
 .artifact-card:hover::before {
-    left: 100%;
+    height: 100%;
 }
 
-/* 2.4 - INTERACTIVE BUTTONS: SYSTEM CONNECTORS */
-.nav-link {
-    position: relative;
-    display: inline-block;
-    color: var(--text-primary);
-    padding: 2px 0;
+/* 2.4 - STATUS INDICATOR ANIMATION */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 5px var(--risk-low); }
+    50% { box-shadow: 0 0 15px var(--risk-low); }
+    100% { box-shadow: 0 0 5px var(--risk-low); }
 }
 
-.nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
+.status-indicator {
+    animation: pulse-glow 2s infinite ease-in-out;
 }
 /* 3.1 - TERMINAL BLINK: SYSTEM HEARTBEAT */
 .blink {
@@ -199,6 +134,7 @@ html, body {
     padding: 2px 8px;
     border-radius: 4px;
     border: 1px solid rgba(255, 69, 58, 0.2);
+    font-weight: 700;
 }
 
 .risk-med {
@@ -207,6 +143,7 @@ html, body {
     padding: 2px 8px;
     border-radius: 4px;
     border: 1px solid rgba(255, 214, 10, 0.2);
+    font-weight: 700;
 }
 
 .risk-low {
@@ -215,15 +152,17 @@ html, body {
     padding: 2px 8px;
     border-radius: 4px;
     border: 1px solid rgba(48, 209, 88, 0.2);
+    font-weight: 700;
 }
 
 /* 3.4 - CREDENTIAL BADGES: SYSTEM VERIFICATION */
 .cred-status {
     font-size: 0.7rem;
     padding: 4px 8px;
-    background: rgba(48, 209,  green 0.05);
+    background: rgba(48, 209, 88, 0.05);
     border: 1px solid var(--risk-low);
     border-radius: 2px;
+    color: var(--risk-low);
 }
 
 .cred-status-pending {
@@ -232,4 +171,5 @@ html, body {
     background: rgba(255, 214, 10, 0.05);
     border: 1px solid var(--risk-med);
     border-radius: 2px;
+    color: var(--risk-med);
 }
