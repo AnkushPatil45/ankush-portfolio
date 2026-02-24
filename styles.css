@@ -1,0 +1,124 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f7f7f5;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* Hero */
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.intro {
+  margin-top: 20px;
+  max-width: 600px;
+  color: #333;
+}
+
+/* Links */
+.links {
+  margin-top: 25px;
+}
+
+.links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #1f3c88;
+  font-weight: 500;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+/* Experience Timeline */
+.entry {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.date {
+  font-family: "JetBrains Mono", monospace;
+  color: #888;
+  min-width: 90px;
+}
+
+.entry ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.entry li {
+  margin-bottom: 6px;
+}
+
+/* Projects */
+.artifact {
+  margin-bottom: 18px;
+}
+
+.artifact strong {
+  display: block;
+  font-weight: 600;
+}
+
+/* Research */
+.research-list {
+  padding-left: 20px;
+}
+
+.research-list li {
+  margin-bottom: 6px;
+}
+
+/* Grid for certs */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  list-style: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 120px;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
