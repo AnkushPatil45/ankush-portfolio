@@ -163,7 +163,12 @@ section:last-of-type {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    background: var(--bg-secondary);
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
 }
 
 .status-indicator {
@@ -468,4 +473,5 @@ section:last-of-type {
         padding: 60px 0;
     }
 }
+
 
