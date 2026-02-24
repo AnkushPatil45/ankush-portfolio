@@ -35,6 +35,7 @@ body::before {
 }
 
 /* 1.3 - THE VIGNETTE: FOCUSING THE AUDIT */
+/* REPLACE WITH THIS */
 body::after {
     content: "";
     position: fixed;
@@ -44,11 +45,16 @@ body::after {
     height: 100%;
     background: radial-gradient(
         circle, 
-        transparent 40%, 
-        rgba(0, 0, 0, 0.4) 100%
+        transparent 70%, 
+        rgba(0, 0, 0, 0.05) 100%
     );
     z-index: 1001;
     pointer-events: none;
+}
+
+/* Specific override for Dark Mode to keep it moody */
+[data-theme="dark"] body::after {
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 /* 1.4 - SYSTEM NOISE: SUBTLE TEXTURE */
