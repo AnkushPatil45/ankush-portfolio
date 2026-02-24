@@ -1,1 +1,165 @@
-Test
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAILURE_MODE_ANALYSIS // ANKUSH PATIL</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body class="audit-theme">
+
+    <div class="system-grid-overlay"></div>
+
+    <div class="viewport-wrapper">
+        
+        <nav class="top-bar">
+            <div class="nav-left">
+                <a href="index.html" class="mono-text back-button">← RETURN_TO_SYSTEM</a>
+            </div>
+            <div class="nav-right">
+                <span class="mono-text">CLASSIFICATION: INTERNAL_RESEARCH</span>
+            </div>
+        </nav>
+
+        <header class="research-header">
+            <div class="section-label mono-text">DOCUMENT_REF: FMA_2026_001</div>
+            <h1 class="glitch-text">FAILURE MODE ANALYSIS</h1>
+            <p class="research-subtitle mono-text">A study of cloud infrastructure resilience and security detection gaps</p>
+            
+            <div class="document-meta">
+                <div class="meta-item">
+                    <span class="label mono-text">AUTHOR:</span>
+                    <span class="value">Ankush Patil</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label mono-text">SCOPE:</span>
+                    <span class="value">AWS / AZURE / EDR TELEMETRY</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label mono-text">DATE:</span>
+                    <span class="value">2026-02-24</span>
+                </div>
+            </div>
+        </header>
+      <section class="research-grid">
+            <div class="section-label mono-text">01_ANALYSIS_MATRIX</div>
+            
+            <div class="matrix-container">
+                <div class="matrix-item">
+                    <div class="matrix-header">
+                        <span class="vector-id mono-text">VEC_EDR_01</span>
+                        <span class="risk-badge high">CRITICAL</span>
+                    </div>
+                    <h3 class="matrix-title">Sensor Blind Spots & Tampering</h3>
+                    <p class="matrix-desc">
+                        Analysis of endpoint detection gaps where EDR sensors (CrowdStrike/SentinelOne) are 
+                        uninstalled or services are silenced via administrative compromise. 
+                        Investigation focuses on detection latency and alerting failures during 
+                        unmanaged asset execution.
+                    </p>
+                </div>
+
+                <div class="matrix-item">
+                    <div class="matrix-header">
+                        <span class="vector-id mono-text">VEC_IAM_04</span>
+                        <span class="risk-badge high">CRITICAL</span>
+                    </div>
+                    <h3 class="matrix-title">Cloud IAM Privilege Escalation</h3>
+                    <p class="matrix-desc">
+                        Mapping misconfigured IAM policies in AWS/Azure that allow users to update 
+                        their own permissions or assume high-privileged roles. 
+                        Focus on 'Resource Star' policies and cross-account trust relationship vulnerabilities.
+                    </p>
+                </div>
+
+                <div class="matrix-item">
+                    <div class="matrix-header">
+                        <span class="vector-id mono-text">VEC_NET_07</span>
+                        <span class="risk-badge med">ELEVATED</span>
+                    </div>
+                    <h3 class="matrix-title">Firewall Shadow Rules</h3>
+                    <p class="matrix-desc">
+                        Audit of over-permissive security group rules that "shadow" stricter policies, 
+                        leading to unintended port exposure (RDP/SSH) across VPC peering connections.
+                    </p>
+                </div>
+
+                <div class="matrix-item">
+                    <div class="matrix-header">
+                        <span class="vector-id mono-text">VEC_OBS_02</span>
+                        <span class="risk-badge low">MODERATE</span>
+                    </div>
+                    <h3 class="matrix-title">Observability Cost Explosion</h3>
+                    <p class="matrix-desc">
+                        Research into high-cardinality log data causing runaway costs in SIEM (Splunk/Sentinel). 
+                        Developing filtering strategies to maintain security visibility while 
+                        optimizing ingest volume.
+                    </p>
+                </div>
+            </div>
+        </section>
+      <section class="case-study">
+            <div class="section-label mono-text">02_APPLICATION_RESILIENCE</div>
+            
+            <div class="case-study-container">
+                <div class="case-meta">
+                    <h2 class="case-title">PROJECT_CASE: HOUSE OF NORTH</h2>
+                    <p class="case-summary">
+                        Implementation of an e-commerce infrastructure with a focus on mitigating 
+                        single points of failure and unauthorized access vectors.
+                    </p>
+                </div>
+
+                <div class="resilience-features">
+                    <div class="feature-item">
+                        <h4 class="mono-text">INFRA_RELIABILITY</h4>
+                        <p>Implemented multi-AZ deployment strategies to ensure platform availability during regional service disruptions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4 class="mono-text">SECURE_REUSABILITY</h4>
+                        <p>Developed modular Infrastructure-as-Code (IaC) templates with embedded security guardrails to prevent misconfigurations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4 class="mono-text">IDENTITY_HYGIENE</h4>
+                        <p>Enforced Least Privilege Principle across all service accounts, reducing the blast radius of potential IAM compromises.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <section class="mitigation-protocols">
+            <div class="section-label mono-text">03_REMEDIATION_PROTOCOLS</div>
+            
+            <div class="protocol-grid">
+                <div class="protocol-box">
+                    <h3 class="protocol-title">Architectural Hardening</h3>
+                    <p>Standardizing on 'Default-Deny' security group configurations and implementing automated drift detection to catch shadow rules before they reach production environments.</p>
+                </div>
+                
+                <div class="protocol-box">
+                    <h3 class="protocol-title">Observability Discipline</h3>
+                    <p>Developing custom telemetry filters at the ingest layer to prioritize high-fidelity security events, significantly reducing SIEM costs while maintaining EDR coverage.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="audit-footer">
+            <div class="footer-line"></div>
+            <div class="footer-content mono-text">
+                <span>ANALYSIS_COMPLETE: 2026-02-24</span>
+                <span>DATA_CLASSIFICATION: VERIFIED // ANKUSH_PATIL</span>
+                <span class="blink">_</span>
+            </div>
+        </footer>
+    </div> <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
+      
+
+       
