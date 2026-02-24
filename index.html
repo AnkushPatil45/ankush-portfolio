@@ -1,125 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankush Patil — Systems Journal</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKUSH PATIL // INFRASTRUCTURE AUDIT</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
 </head>
+<body class="audit-theme">
 
-<body>
+    <div class="system-grid-overlay"></div>
 
-<div class="container">
-  <nav>
-    <button id="themeToggle">☾</button>
-  </nav>
+    <div class="viewport-wrapper">
+        
+        <nav class="top-bar">
+            <div class="nav-left">
+                <span class="status-indicator"></span>
+                <span class="mono-text">SYSTEM_STATUS: ACTIVE</span>
+            </div>
+            <div class="nav-right">
+                <button id="themeToggle" class="mono-text">MODE_SELECT [☾]</button>
+            </div>
+        </nav>
 
-  <header>
-    <h1>Ankush Patil</h1>
-    <p class="subtitle">Security & Infrastructure Analyst <span class="dim">• Cloud Architecture</span></p>
+        <header class="hero-header">
+            <div class="hero-identity">
+                <h1 class="glitch-text">ANKUSH PATIL</h1>
+                <p class="role-descriptor mono-text">NETWORK & INFRASTRUCTURE SECURITY ANALYST</p>
+                <div class="location-stamp mono-text">COORD: TORONTO, ON // 43.6532° N, 79.3832° W</div>
+            </div>
 
-    <p class="intro">
-      I analyze how enterprise systems fail, how security controls break, and how cloud architectures behave under real-world constraints.
-    </p>
+            <div class="hero-links">
+                <div class="link-group">
+                    <span class="link-label mono-text">001_FILE</span>
+                    <a href="resume.pdf" target="_blank" class="nav-link">RESUME.PDF</a>
+                </div>
+                <div class="link-group">
+                    <span class="link-label mono-text">002_INTEL</span>
+                    <a href="https://linkedin.com/in/ankush-p-a47664167" target="_blank" class="nav-link">LINKEDIN</a>
+                </div>
+                <div class="link-group">
+                    <span class="link-label mono-text">003_SOURCE</span>
+                    <a href="https://github.com/AnkushPatil45" target="_blank" class="nav-link">GITHUB</a>
+                </div>
+                <div class="link-group">
+                    <span class="link-label mono-text">004_COMMS</span>
+                    <a href="mailto:ankushgp@icloud.com" class="nav-link">SECURE_MAIL</a>
+                </div>
+            </div>
+        </header>
+        <section class="audit-overview">
+            <div class="section-label mono-text">01_SYSTEM_OVERVIEW</div>
+            <div class="content-grid">
+                <div class="methodology-block">
+                    <h2 class="abstract-title">ABSTRACT</h2>
+                    <p class="abstract-text">
+                        Specialized analyst focused on the intersection of infrastructure resilience and enterprise security controls. 
+                        Professional background includes high-volume application classification and endpoint telemetry analysis within 
+                        complex cloud and hybrid environments. Current research is dedicated to mapping failure modes 
+                        in production cloud architectures and mitigating observability cost blowouts.
+                    </p>
+                </div>
+                <div class="metrics-block">
+                    <div class="metric-item">
+                        <span class="metric-value mono-text">130K+</span>
+                        <span class="metric-label mono-text">APP_AUDITS</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value mono-text">AWS/AZ</span>
+                        <span class="metric-label mono-text">INFRA_STRACK</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value mono-text">SIEM+EDR</span>
+                        <span class="metric-label mono-text">DEFENSE_LAYERS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="links">
-      <a href="resume.pdf" target="_blank">Resume</a>
-      <a href="https://linkedin.com/in/ankush-p-a47664167" target="_blank">LinkedIn</a>
-      <a href="https://github.com/AnkushPatil45" target="_blank">GitHub</a>
-      <a href="mailto:ankushgp@icloud.com">Contact</a>
-    </div>
-  </header>
+        <section class="operational-history">
+            <div class="section-label mono-text">02_OPERATIONAL_HISTORY</div>
+            
+            <div class="audit-log-entry">
+                <div class="entry-meta">
+                    <span class="entry-id mono-text">ID: INTACT_SEC_025</span>
+                    <span class="entry-date mono-text">PERIOD: 2025</span>
+                </div>
+                <div class="entry-details">
+                    <h3 class="entity-name">CYBERSECURITY ANALYST CO-OP — INTACT INSURANCE</h3>
+                    <ul class="task-list">
+                        <li>Analyzed enterprise endpoint telemetry using CrowdStrike Falcon to identify sensor coverage gaps.</li>
+                        <li>Audited 130,000+ enterprise applications within CyberArk to enforce strict application control policies.</li>
+                        <li>Engineered security metrics dashboards to visualize endpoint hygiene and compliance posture.</li>
+                        <li>Modeled AI-driven social engineering risks for executive-level awareness presentations.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <section>
-    <h2>01. System Overview</h2>
-    <p>
-      Security analyst and cloud engineering researcher with experience in endpoint security, application control, SIEM monitoring, and cloud architecture design. Focused on security misconfigurations, detection failures, and production system trade-offs.
-    </p>
-  </section>
+            <div class="audit-log-entry">
+                <div class="entry-meta">
+                    <span class="entry-id mono-text">ID: PERSISTENT_023</span>
+                    <span class="entry-date mono-text">PERIOD: 2022 – 2023</span>
+                </div>
+                <div class="entry-details">
+                    <h3 class="entity-name">SOFTWARE ENGINEER — PERSISTENT SYSTEMS</h3>
+                    <ul class="task-list">
+                        <li>Managed brute-force detection workflows via Splunk SIEM authentication log analysis.</li>
+                        <li>Developed Python automation to scan for unauthorized port exposures across enterprise network segments.</li>
+                        <li>Hardened database layers through SQL Server encryption and granular RBAC implementation.</li>
+                        <li>Supported SOC incident response workflows during live malware remediation cycles.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="engineering-artifacts">
+            <div class="section-label mono-text">03_ENGINEERING_ARTIFACTS</div>
+            
+            <div class="artifact-grid">
+                <div class="artifact-card">
+                    <div class="artifact-header">
+                        <span class="artifact-type mono-text">PROJECT_001</span>
+                        <h3 class="artifact-title">BUILD ROULETTE</h3>
+                    </div>
+                    <p class="artifact-desc">
+                        A dedicated research platform documenting production-informed cloud architectures, 
+                        security trade-offs, and operational failure modes.
+                    </p>
+                    <div class="artifact-tags mono-text">
+                        <span>#CLOUD_ARCHITECTURE</span>
+                        <span>#SECURITY_RESEARCH</span>
+                    </div>
+                </div>
 
-  <section>
-    <h2>02. Operational History</h2>
+                <div class="artifact-card">
+                    <div class="artifact-header">
+                        <span class="artifact-type mono-text">PROJECT_002</span>
+                        <h3 class="artifact-title">HOUSE OF NORTH</h3>
+                    </div>
+                    <p class="artifact-desc">
+                        Engineering Lead for an e-commerce infrastructure design. Focused on building 
+                        reliable, reusable, and secure end-to-end platform architecture.
+                    </p>
+                    <div class="artifact-tags mono-text">
+                        <span>#INFRA_RELIABILITY</span>
+                        <span>#AWS_SEC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="entry">
-      <span class="date">2025</span>
-      <div>
-        <strong>Cybersecurity Analyst Co-op — Intact Insurance</strong>
-        <ul>
-          <li>Analyzed enterprise endpoint security using CrowdStrike Falcon.</li>
-          <li>Identified unmanaged assets and outdated sensor deployments.</li>
-          <li>Reviewed and classified 130,000+ enterprise applications in CyberArk.</li>
-          <li>Produced security metrics and compliance reporting.</li>
-        </ul>
-      </div>
-    </div>
+        <section class="failure-mode-research">
+            <div class="section-label mono-text">04_FAILURE_MODE_ANALYSIS</div>
+            <div class="research-table-wrapper">
+                <table class="research-table">
+                    <thead class="mono-text">
+                        <tr>
+                            <th>VECTOR_ID</th>
+                            <th>FAILURE_MODE_DESCRIPTION</th>
+                            <th>RISK_LEVEL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mono-text">VEC_001</td>
+                            <td>EDR sensor blind spots & tampering scenarios</td>
+                            <td class="risk-high">CRITICAL</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-text">VEC_002</td>
+                            <td>Firewall shadow rules & over-permissive policies</td>
+                            <td class="risk-med">ELEVATED</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-text">VEC_003</td>
+                            <td>Cloud IAM privilege escalation misconfigurations</td>
+                            <td class="risk-high">CRITICAL</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-text">VEC_004</td>
+                            <td>Observability cost explosion in production systems</td>
+                            <td class="risk-low">MODERATE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="credentials-stack">
+            <div class="section-label mono-text">05_CREDENTIALS_VERIFICATION</div>
+            <div class="creds-grid">
+                <div class="cred-item">
+                    <span class="cred-status mono-text">[VERIFIED]</span>
+                    <span class="cred-name">AWS CERTIFIED CLOUD PRACTITIONER</span>
+                </div>
+                <div class="cred-item">
+                    <span class="cred-status mono-text">[VERIFIED]</span>
+                    <span class="cred-name">GOOGLE FOUNDATIONS OF CYBERSECURITY</span>
+                </div>
+                <div class="cred-item">
+                    <span class="cred-status-pending mono-text">[IN_PROGRESS]</span>
+                    <span class="cred-name">AWS SECURITY SPECIALTY</span>
+                </div>
+                <div class="cred-item">
+                    <span class="cred-status-pending mono-text">[IN_PROGRESS]</span>
+                    <span class="cred-name">AZURE SECURITY ENGINEER (AZ-500)</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="entry">
-      <span class="date">2022–2023</span>
-      <div>
-        <strong>Software Engineer — Persistent Systems</strong>
-        <ul>
-          <li>Monitored authentication logs using Splunk to detect brute-force attempts.</li>
-          <li>Built Python automation to detect unauthorized network exposure.</li>
-          <li>Implemented SQL Server encryption and RBAC.</li>
-          <li>Assisted in incident response and malware remediation.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>03. Engineering Artifacts</h2>
-
-    <div class="artifact">
-      <strong>Build Roulette</strong>
-      <p>Cloud engineering research platform documenting architectural decisions, security trade-offs, and failure modes.</p>
-    </div>
-
-    <div class="artifact">
-      <strong>Enterprise Security Home Lab</strong>
-      <p>Windows domain, SIEM, firewall, and attack simulation environment with detection workflows.</p>
-    </div>
-
-    <div class="artifact">
-      <strong>Security Automation Scripts</strong>
-      <p>Python tooling for network exposure detection and security log classification.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>04. Failure Mode Research</h2>
-    <ul class="research-list">
-      <li>EDR sensor blind spots and tampering scenarios.</li>
-      <li>Firewall shadow rules and over-permissive policies.</li>
-      <li>Cloud IAM privilege escalation misconfigurations.</li>
-      <li>Observability cost explosion patterns in production systems.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>05. Credentials</h2>
-    <ul class="grid">
-      <li>AWS Certified Cloud Practitioner.</li>
-      <li>Google Foundations of Cybersecurity.</li>
-      <li>Pursuing: AWS Security Specialty.</li>
-      <li>Pursuing: Azure Security Engineer (AZ-500).</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>06. Current Research Focus</h2>
-    <p>
-      Security incident classification for AI training datasets, cloud failure mode documentation, and observability cost discipline architectures.
-    </p>
-  </section>
-
-  <footer>
-    <p>Last updated: 2026-02-24</p>
-  </footer>
-
-</div>
-
-<script src="script.js"></script>
+        <section class="current-focus">
+            <div class="section-label mono-text">06_CURRENT_FOCUS</div>
+            <div class="focus-box">
+                <p>
+                    Actively researching security incident classification for AI training datasets and 
+                    developing standardized documentation for cloud failure mode patterns. 
+                    Specialized interest in observability cost discipline within high-availability architectures.
+                </p>
+            </div>
+        </section>
+        <footer class="audit-footer">
+            <div class="footer-line"></div>
+            <div class="footer-content mono-text">
+                <span>FINAL_REPORT_GEN: 2026-02-24</span>
+                <span>ANKUSH_PATIL // HUMAN_RESOURCES_PROTOCOL_01</span>
+                <span class="blink">_</span>
+            </div>
+        </footer>
+    </div> <script src="script.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
