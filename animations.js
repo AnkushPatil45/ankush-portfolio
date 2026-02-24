@@ -15,7 +15,7 @@ const runGlitchEffect = (element) => {
                 if(index < iteration) {
                     return originalText[index];
                 }
-                return letters[Math.floor(Math.random() * 26)];
+                return letters[Math.floor(Math.random() * letters.length)];
             })
             .join("");
         
@@ -24,7 +24,7 @@ const runGlitchEffect = (element) => {
         }
         
         iteration += 1 / 3;
-    }, 30;
+    }, 30);
 };
 
 /* 1.2 - INTERSECTION OBSERVER: STAGGERED REVEAL */
@@ -37,7 +37,7 @@ const initRevealAnimations = () => {
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add the visible class to trigger CSS transitions
+                // Trigger the CSS reveal transition
                 entry.target.classList.add('reveal-active');
                 
                 // If it's a glitch-text element, trigger the decoding effect
@@ -51,19 +51,19 @@ const initRevealAnimations = () => {
         });
     }, observerOptions);
 
-    // Target all sections and specific headings
-    document.querySelectorAll('section, .artifact-card, .audit-log-entry').forEach((el) => {
+    // Target all primary containers and cards for reveal
+    document.querySelectorAll('section, .artifact-card, .audit-log-entry, .cred-item').forEach((el) => {
         el.classList.add('reveal-hidden');
         revealObserver.observe(el);
     });
 };
 
-/* 1.3 - PREPARING TEXT FOR DECODING */
+/* 1.3 - DATA SOURCE INITIALIZATION */
 document.querySelectorAll('.glitch-text').forEach(el => {
     el.dataset.value = el.innerText;
 });
 
-// Initialize on Load
+// Initialize on window load
 window.addEventListener('load', () => {
     initRevealAnimations();
 });
@@ -75,10 +75,10 @@ const initGridParallax = () => {
         if (!grid) return;
         
         // Calculate movement based on mouse position relative to center
-        const x = (window.innerWidth / 2 - e.pageX) / 50;
-        const y = (window.innerHeight / 2 - e.pageY) / 50;
+        const x = (window.innerWidth / 2 - e.pageX) / 60;
+        const y = (window.innerHeight / 2 - e.pageY) / 60;
         
-        // Apply a subtle 3D transform to the background grid
+        // Apply a subtle 2D transform to the background grid
         grid.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
 };
@@ -96,8 +96,8 @@ const initTypewriter = () => {
         if (i < text.length) {
             focusBox.innerText += text.charAt(i);
             i++;
-            // Randomize typing speed slightly for human-realistic "Terminal" feel
-            setTimeout(type, Math.random() * 20 + 10);
+            // Randomize typing speed for a realistic "Terminal" feel
+            setTimeout(type, Math.random() * 15 + 10);
         }
     };
 
@@ -107,7 +107,7 @@ const initTypewriter = () => {
             type();
             observer.disconnect();
         }
-    });
+    }, { threshold: 0.5 });
 
     observer.observe(focusBox);
 };
@@ -119,6 +119,9 @@ const checkMotionPreference = () => {
     if (!prefersReducedMotion.matches) {
         initGridParallax();
         initTypewriter();
+    } else {
+        // Fallback for users with motion sensitivity
+        console.log("[SYSTEM] MOTION_REDUCED: PARALLAX_DISABLED");
     }
 };
 
@@ -126,6 +129,6 @@ const checkMotionPreference = () => {
 document.addEventListener('DOMContentLoaded', () => {
     checkMotionPreference();
     
-    // Final UX Touch: Log initialization to the system console
+    // Log initialization to the system console for debugging
     console.log("[SYSTEM] TELEMETRY_INITIALIZED: PARALLAX_ACTIVE // TYPEWRITER_READY");
 });
