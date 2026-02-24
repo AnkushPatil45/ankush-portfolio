@@ -1,174 +1,96 @@
-/* 1.1 - CORE VARIABLES: THE BLACK BOX PALETTE */
+/* 1.1 - VARIABLE REGISTRY: LIGHT & DARK PROTOCOLS */
 :root {
-    /* System Colors - Defaulting to Dark */
-    --bg-primary: #0a0a0b;
-    --bg-secondary: #111112;
-    --text-primary: #f5f5f7;
-    --text-dim: #88888e;
-    --accent: #3291ff; /* Signal Blue */
-    --border: #1d1d1f;
-    --grid-line: rgba(255, 255, 255, 0.03);
-    
-    /* Risk Levels */
-    --risk-high: #ff453a;
-    --risk-med: #ffd60a;
-    --risk-low: #30d158;
+    /* TYPOGRAPHY */
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
 
-    /* Typographic Scale */
-    --font-main: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-}
-
-/* 1.2 - LIGHT MODE OVERRIDE (Only active when specifically toggled) */
-/* REPLACE YOUR OLD LIGHT THEME BLOCK WITH THIS */
-[data-theme="light"] {
-    --bg-primary: #ffffff; 
+    /* LIGHT THEME (CLINICAL WHITE) */
+    --bg-primary: #ffffff;
     --bg-secondary: #f9f9fb;
     --text-primary: #111111;
     --text-dim: #666666;
-    --accent: #0071e3;
+    --accent: #0071e3; /* Industrial Blue */
     --border: #e1e1e6;
     --grid-line: rgba(0, 0, 0, 0.05);
+    
+    /* RISK INDICATORS */
+    --risk-high: #ff453a;
+    --risk-med: #ffd60a;
+    --risk-low: #30d158;
 }
 
-/* 1.3 - RESET & DEFAULTS */
+/* 1.2 - DARK THEME OVERRIDES (BLACK BOX MODE) */
+[data-theme="dark"] {
+    --bg-primary: #0a0a0b;
+    --bg-secondary: #161618;
+    --text-primary: #f0f0f0;
+    --text-dim: #888888;
+    --accent: #3291ff;
+    --border: #2d2d30;
+    --grid-line: rgba(255, 255, 255, 0.05);
+}
+
+/* 1.3 - GLOBAL RESET & BASE STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: crosshair; /* UX Touch: Signals "Auditor" mindset */
 }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+    /* Forces Dark Mode as default to prevent "White Flash" */
+    background-color: var(--bg-primary);
+}
+
+body {
+    font-family: var(--sans);
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: var(--font-main);
-    font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-x: hidden;
+    cursor: crosshair; /* Changes cursor to a precision targeting tool */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 1.4 - GLOBAL TYPOGRAPHY */
 .mono-text {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    font-family: var(--mono);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+}
+/* 2.1 - VIEWPORT WRAPPER: THE SYSTEM CONTAINER */
+.viewport-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 10; /* Ensures content sits above the grid lines */
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-/* 1.5 - UTILITY CLASSES */
-.blink {
-    animation: blinker 1s step-start infinite;
-}
-
-@keyframes blinker {
-    50% { opacity: 0; }
-}
-
-/* 2.1 - SYSTEM GRID OVERLAY: THE ARCHITECTURAL TEXTURE */
+/* 2.2 - THE SYSTEM GRID: ARCHITECTURAL TEXTURE */
 .system-grid-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999; /* Keeps grid above all content but non-interactive */
+    width: 100vw;
+    height: 100vh;
     background-image: 
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 40px 40px; /* Precise 40px grid scaling */
-    mask-image: radial-gradient(circle at center, black, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
-}
-
-/* 2.2 - THE VIEWPORT WRAPPER: CONTENT ALIGNMENT */
-.viewport-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* Senior UX standard for readable wide-screen line lengths */
-    margin: 0 auto;
-    padding: 0 40px;
+    background-size: 40px 40px; /* Size of the grid squares */
+    pointer-events: none;
     z-index: 1;
 }
 
-/* 2.3 - SECTION LABELS: THE AUDIT MARKERS */
-.section-label {
-    display: flex;
-    align-items: center;
-    color: var(--dim);
-    margin-bottom: 2rem;
-    font-weight: 500;
-}
-
-.section-label::after {
-    content: "";
-    flex-grow: 1;
-    height: 1px;
-    background: var(--border);
-    margin-left: 20px;
-}
-
-/* 2.4 - GLOBAL SECTION SPACING */
-section {
-    padding: 100px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-section:last-of-type {
-    border-bottom: none;
-}
-
-/* 2.5 - SCROLLBAR STYLING: MAINTAINING THE THEME */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
-}
-/* 3.1 - TOP NAVIGATION: SYSTEM STATUS BAR */
+/* 2.3 - TOP NAVIGATION: PERSISTENT STATUS BAR */
 .top-bar {
-    position: sticky;
-    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-    background: rgba(10, 10, 11, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    height: 80px;
     border-bottom: 1px solid var(--border);
-    z-index: 1000;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--bg-secondary);
-    padding: 6px 14px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    font-size: 0.85rem;
+    margin-bottom: 60px;
 }
 
 .status-indicator {
@@ -177,13 +99,6 @@ section:last-of-type {
     background-color: var(--risk-low);
     border-radius: 50%;
     box-shadow: 0 0 8px var(--risk-low);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 1; }
 }
 
 #themeToggle {
@@ -192,43 +107,47 @@ section:last-of-type {
     color: var(--text-primary);
     padding: 6px 12px;
     border-radius: 4px;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
 #themeToggle:hover {
-    background: var(--text-primary);
-    color: var(--bg-primary);
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
 }
-
-/* 3.2 - HERO HEADER: THE IDENTITY PROTOCOL */
+/* 3.1 - HERO IDENTITY: THE MAIN READOUT */
 .hero-header {
-    padding: 120px 0 80px 0;
-}
-
-.hero-identity h1 {
-    font-size: clamp(3rem, 10vw, 6rem); /* Responsive fluid typography */
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    border-left: 2px solid var(--accent); /* Signifies an active data stream */
+    padding-left: 30px;
 }
 
 .role-descriptor {
-    font-size: 1rem;
     color: var(--accent);
-    margin-bottom: 8px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive typography */
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
 }
 
 .location-stamp {
     color: var(--text-dim);
-    margin-bottom: 60px;
+    font-size: 0.8rem;
 }
 
-/* 3.3 - HERO LINKS: ACCESS POINTS */
+/* 3.2 - ACCESS POINTS: DYNAMIC LINK STYLING */
 .hero-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 30px;
+    margin-top: 50px;
 }
 
 .link-group {
@@ -239,239 +158,214 @@ section:last-of-type {
 
 .link-label {
     color: var(--text-dim);
+    font-size: 0.7rem;
 }
 
 .nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
     font-size: 1.1rem;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    width: fit-content;
-    padding-bottom: 2px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 .nav-link:hover {
     color: var(--accent);
-    border-color: var(--accent);
+    transform: translateX(5px); /* Visual feedback for the "Access" action */
 }
-/* 4.1 - AUDIT OVERVIEW: ABSTRACT & METRICS */
+
+/* 3.3 - SECTION LABELS: ARCHITECTURAL MARKERS */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+}
+
+.section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+/* 4.1 - SECTION CONTAINERS */
+section {
+    margin-bottom: 120px;
+}
+
+/* 4.2 - ABSTRACT & METRICS BOX */
 .content-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: start;
 }
 
-.abstract-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--accent);
+.abstract-box {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 
-.abstract-text {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    max-width: 500px;
+.abstract-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--accent);
 }
 
 .metrics-block {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    border-left: 1px solid var(--border);
-    padding-left: 40px;
 }
 
 .metric-item {
-    display: flex;
-    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
 }
 
 .metric-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-primary);
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
 }
 
-.metric-label {
-    color: var(--text-dim);
-}
-
-/* 4.2 - OPERATIONAL HISTORY: LOG ENTRIES */
+/* 4.3 - AUDIT LOGS: PROFESSIONAL EXPERIENCE */
 .audit-log-entry {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     gap: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
 }
 
 .entry-meta {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    color: var(--text-dim);
 }
 
 .entity-name {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
+.task-list {
+    list-style: none;
+}
+
 .task-list li {
+    position: relative;
+    padding-left: 20px;
     margin-bottom: 12px;
-    color: var(--text-dim);
-    transition: color 0.3s ease;
 }
 
-.task-list li:hover {
-    color: var(--text-primary);
+.task-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
 }
-
-/* 4.3 - FAILURE MODE RESEARCH: DATA TABLE */
-.research-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--bg-secondary);
-}
-
-.research-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-.research-table th, .research-table td {
-    padding: 20px;
-    border-bottom: 1px solid var(--border);
-}
-
-.research-table th {
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--text-dim);
-}
-
-.risk-high { color: var(--risk-high); font-weight: 700; }
-.risk-med { color: var(--risk-med); font-weight: 700; }
-.risk-low { color: var(--risk-low); font-weight: 700; }
-/* 5.1 - ARTIFACT CARDS: THE PROJECT VAULT */
+/* 5.1 - ARTIFACT CARDS: PROJECT GRID */
 .artifact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .artifact-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    padding: 32px;
+    padding: 30px;
     border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .artifact-card:hover {
-    border-color: var(--accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
 }
 
-.artifact-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.artifact-desc {
-    color: var(--text-dim);
-    margin: 20px 0;
-    font-size: 0.95rem;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .artifact-tags {
+    margin-top: 20px;
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    font-size: 0.7rem;
     color: var(--accent);
+    flex-wrap: wrap;
 }
 
-/* 5.2 - CREDENTIALS & CURRENT FOCUS */
+/* 5.2 - RESEARCH TABLE: FORENSIC MATRIX */
+.research-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 1px solid var(--border);
+}
+
+.research-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+}
+
+.research-table th, .research-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.research-table th {
+    background: var(--bg-secondary);
+    color: var(--text-dim);
+}
+
+/* 5.3 - CREDENTIALS GRID */
 .creds-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .cred-item {
-    background: var(--bg-secondary);
-    padding: 15px 20px;
+    padding: 15px;
     border: 1px solid var(--border);
     display: flex;
-    gap: 15px;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.cred-status { color: var(--risk-low); }
-.cred-status-pending { color: var(--risk-med); }
-
-.focus-box {
-    background: rgba(50, 145, 255, 0.05);
-    border-left: 4px solid var(--accent);
-    padding: 30px;
-    font-size: 1.2rem;
-    color: var(--text-primary);
-}
-
-/* 5.3 - FOOTER: THE TERMINAL END */
+/* 5.4 - SYSTEM FOOTER */
 .audit-footer {
-    padding: 100px 0 60px 0;
+    margin-top: 150px;
+    padding-bottom: 80px;
 }
 
 .footer-line {
+    width: 100%;
     height: 1px;
     background: var(--border);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
     color: var(--text-dim);
+    font-size: 0.75rem;
 }
-
-/* 5.4 - RESPONSIVE OVERRIDES: MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-    .viewport-wrapper {
-        padding: 0 20px;
-    }
-
-    .hero-header {
-        padding: 80px 0 40px 0;
-    }
-
-    .content-grid, .audit-log-entry {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .metrics-block {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding: 30px 0 0 0;
-    }
-
-    .hero-identity h1 {
-        font-size: 3.5rem;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-}
-
-
