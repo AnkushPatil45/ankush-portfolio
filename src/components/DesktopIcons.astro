@@ -9,7 +9,7 @@ const icons = [
   ['win-contact', 'i-signal', 'contact.sh'],
 ];
 ---
-<div id="icons">
+<div id="icons" aria-hidden="true">
   {icons.map(([id, icon, label]) => (
     <div class="icon" data-open={id}>
       <span class="glyph"><svg class="ic"><use href={`#${icon}`}></use></svg></span>

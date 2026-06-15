@@ -10,11 +10,11 @@ const dock = [
   ['win-terminal', 'i-terminal', 'Terminal'],
 ];
 ---
-<div id="dock">
+<nav id="dock" aria-label="Apps">
   {dock.map(([id, icon, tip]) => (
     <button class="dock-btn" data-open={id} aria-label={tip}>
-      <svg class="ic"><use href={`#${icon}`}></use></svg>
+      <svg class="ic" aria-hidden="true"><use href={`#${icon}`}></use></svg>
       <span class="tip">{tip}</span>
     </button>
   ))}
-</div>
+</nav>

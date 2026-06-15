@@ -7,7 +7,16 @@ export default defineConfig({
   site: 'https://ankushpatil45.github.io',
   base: '/ankush-portfolio',
   trailingSlash: 'ignore',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        item.changefreq = 'monthly';
+        item.priority = 1.0;
+        return item;
+      },
+    }),
+  ],
   build: {
     inlineStylesheets: 'auto',
   },
