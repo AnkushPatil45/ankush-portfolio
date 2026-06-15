@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ============================================================
-   PatilOS client — window manager, terminal, cursor, sound.
+   PatilOS client - window manager, terminal, cursor, sound.
    ============================================================ */
 
 /* ================= BOOT ================= */

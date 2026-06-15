@@ -1,5 +1,5 @@
 // ============================================================
-//  PatilOS — single source of truth for all site content.
+//  PatilOS - single source of truth for all site content.
 //  Every window reads from here. Edit content in ONE place.
 // ============================================================
 

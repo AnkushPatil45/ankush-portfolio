@@ -1,7 +1,7 @@
 # PatilOS
 
 A personal portfolio for Ankush Patil, Cloud Engineer (Toronto), built as a small
-"desktop operating system" — it boots up, opens draggable app windows, and has a working terminal.
+"desktop operating system" - it boots up, opens draggable app windows, and has a working terminal.
 
 **Live:** https://ankushpatil45.github.io/ankush-portfolio/
 

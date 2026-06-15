@@ -1,5 +1,5 @@
 /* ============================================================
-   PatilOS — Aurora Noir design system
+   PatilOS - Aurora Noir design system
    ============================================================ */
 :root{
   --bg:#0a0908;        /* warm obsidian */
@@ -192,7 +192,7 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
 .proj .name a:hover{color:var(--accent-2)}
 .proj p{font-size:12.5px;margin:7px 0 0}
 
-/* badges — labeled cards that zoom on hover */
+/* badges - labeled cards that zoom on hover */
 .badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin:12px 0}
 .badge{display:flex;flex-direction:column;align-items:center;gap:8px;padding:11px 8px 9px;border:1px solid var(--edge);
   border-radius:11px;background:rgba(236,230,218,.03);cursor:default;
@@ -224,7 +224,7 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
   background:var(--gold);box-shadow:0 0 18px 2px rgba(240,182,75,.85)}
 .window.open .win-photo::before,.window.open .win-figure::before{animation:scanline .85s cubic-bezier(.76,0,.24,1)}
 @keyframes scanline{0%{left:0;opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
-/* image hover — premium lift: zoom + colour comes alive + gold focus frame */
+/* image hover - premium lift: zoom + colour comes alive + gold focus frame */
 .win-photo,.win-figure{transition:box-shadow .45s ease,border-color .45s ease,transform .45s cubic-bezier(.2,.8,.25,1)}
 .win-photo img,.win-figure img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .55s ease;will-change:transform}
 .win-photo:hover,.win-figure:hover{transform:translateY(-3px);border-color:rgba(240,182,75,.55);
@@ -411,7 +411,7 @@ body.cursor-on #cursor{opacity:1}
 }
 
 /* ============================================================
-   APP INTERIOR DESIGN — shared patterns (override base)
+   APP INTERIOR DESIGN - shared patterns (override base)
    ============================================================ */
 /* section header: index chip + label + hairline rule */
 .sec-head{display:flex;align-items:center;gap:10px;margin:24px 0 14px}
