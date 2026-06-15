@@ -11,8 +11,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // "/ankush-portfolio"
 const canonical = new URL(base + '/', Astro.site).href;
 const ogImage = new URL(base + '/og.jpg', Astro.site).href;
 
-// Paste your Google Search Console verification code here (Settings → just the token).
-const gscVerification = '';
+// Google Search Console verification token.
+const gscVerification = 'peL8YaqN0GFASW19ekDhiLIwynDsbkDxyRIfI8OmZFA';
 
 const person = {
   '@type': 'Person',
