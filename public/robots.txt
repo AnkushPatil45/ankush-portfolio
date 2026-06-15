@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ankushpatil45.github.io/ankush-portfolio/sitemap-index.xml

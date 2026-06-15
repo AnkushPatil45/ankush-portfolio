@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import medalsImg from '../../assets/photos/medals.jpeg';
+import teamImg from '../../assets/photos/team-ontario.jpeg';
+import { medals } from '../../data/site';
+const sizes = '(max-width:760px) 92vw, 480px';
+---
+<h2>Competition record</h2>
+<p class="sub">Cloud Computing · Post-Secondary · 2026 season</p>
+<div class="season-line"><span class="chip">1 season</span><span class="chip">2 medals</span><span class="chip">Gold + Silver</span></div>
+<figure class="win-figure">
+  <Image src={medalsImg} alt="Gold and silver medals from the 2026 Skills season" widths={[480, 960]} sizes={sizes} loading="lazy" />
+  <figcaption>Gold + Silver - the 2026 season</figcaption>
+</figure>
+{medals.map((m) => (
+  <div class={`medal-card ${m.metal}`}>
+    <div class="row"><span class="place">{m.metal === 'gold' ? '🥇 GOLD' : '🥈 SILVER'}</span><span class="yr">{m.year}</span></div>
+    <div class="ev">{m.event}</div>
+    <p>{m.note}</p>
+  </div>
+))}
+<figure class="win-figure">
+  <Image src={teamImg} alt="Team Ontario at Skills Canada Nationals 2026, Toronto" widths={[480, 960]} sizes={sizes} loading="lazy" />
+  <figcaption>Team Ontario - Skills Canada Nationals, Toronto</figcaption>
+</figure>

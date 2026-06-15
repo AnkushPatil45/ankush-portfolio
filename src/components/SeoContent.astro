@@ -1,0 +1,52 @@
+---
+// Crawlable, keyword-rich semantic summary of the whole page.
+// Visually hidden (.sr-only) but fully indexed by search engines and
+// read by screen readers — the desktop UI alone is hard for both.
+import { profile, experience, education, awsCerts, otherCerts, projects, openTo, skills } from '../data/site';
+---
+<main class="sr-only" aria-label="Ankush Patil — Cloud Engineer portfolio">
+  <h1>Ankush Patil — Cloud Engineer in Toronto, Ontario, Canada</h1>
+  <p>
+    {profile.summary} {profile.workStatus}. Ankush Patil is an AWS-certified Cloud Engineer open to
+    {' '}{openTo.join(', ')} roles in Toronto and remote across Canada.
+  </p>
+
+  <h2>Skills</h2>
+  <ul>{Object.values(skills).map((s) => <li>{s}</li>)}</ul>
+
+  <h2>Experience</h2>
+  {experience.map((j) => (
+    <section>
+      <h3>{j.title} ({j.year})</h3>
+      <p>{j.meta}</p>
+      <ul>{j.bullets.map((b) => <li>{b}</li>)}</ul>
+    </section>
+  ))}
+
+  <h2>Education</h2>
+  <ul>{education.map((e) => <li>{e.title} ({e.year})</li>)}</ul>
+
+  <h2>Certifications</h2>
+  <ul>{[...awsCerts, ...otherCerts].map((c) => <li>{c.name} ({c.year})</li>)}</ul>
+
+  <h2>Selected work</h2>
+  {projects.map((p) => (
+    <section>
+      <h3>{p.label.replace(/[/↗ ]+$/, '')}</h3>
+      <p>{p.blurb} Stack: {p.stack.join(', ')}.</p>
+    </section>
+  ))}
+
+  <h2>Awards</h2>
+  <ul>
+    <li>Gold — Skills Ontario 2026 (Cloud Computing, post-secondary)</li>
+    <li>Silver — Skills Canada Nationals 2026 (Cloud Computing, representing Ontario)</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <ul>
+    <li>Email: <a href={`mailto:${profile.email}`}>{profile.email}</a></li>
+    <li>GitHub: <a href={profile.github}>{profile.githubHandle}</a></li>
+    <li>LinkedIn: <a href={profile.linkedin}>{profile.linkedinHandle}</a></li>
+  </ul>
+</main>

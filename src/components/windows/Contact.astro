@@ -1,0 +1,12 @@
+---
+import { profile, openTo } from '../../data/site';
+---
+<h2>Open a connection</h2>
+<p class="sub">status: open to work · Toronto, ON · authorized to work in Canada</p>
+<div class="cta">
+  <a href={`mailto:${profile.email}`}><span><b>$</b> mail ankush</span><span class="sub">{profile.email}</span></a>
+  <a href={profile.github} target="_blank" rel="noopener"><span><b>$</b> git clone</span><span class="sub">{profile.githubHandle}</span></a>
+  <a href={profile.linkedin} target="_blank" rel="noopener"><span><b>$</b> connect</span><span class="sub">{profile.linkedinHandle}</span></a>
+</div>
+<h3>// open to</h3>
+<div class="tagrow">{openTo.map((r) => <span>{r}</span>)}</div>

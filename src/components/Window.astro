@@ -1,0 +1,22 @@
+---
+// Reusable window shell. Body content comes via <slot/>.
+interface Props {
+  id: string;
+  icon: string;
+  title: string;
+  x: string;
+  y: string;
+  w: number;
+  h: number;
+  bodyId?: string;
+}
+const { id, icon, title, x, y, w, h, bodyId } = Astro.props;
+---
+<div class="window" id={id} style={`left:${x};top:${y};width:${w}px;height:${h}px`}>
+  <div class="win-head">
+    <div class="win-dots"><span class="dot-close"></span><span class="dot-min"></span><span class="dot-max"></span></div>
+    <svg class="ic win-ic"><use href={`#${icon}`}></use></svg>
+    <span class="win-title">{title}</span>
+  </div>
+  <div class="win-body" id={bodyId}><slot /></div>
+</div>

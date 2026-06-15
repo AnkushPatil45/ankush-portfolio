@@ -1,0 +1,51 @@
+---
+import { getImage } from 'astro:assets';
+import podiumSrc from '../assets/photos/podium.jpeg';
+import Base from '../layouts/Base.astro';
+import SeoContent from '../components/SeoContent.astro';
+import IconSprite from '../components/IconSprite.astro';
+import Cursor from '../components/Cursor.astro';
+import Boot from '../components/Boot.astro';
+import Menubar from '../components/Menubar.astro';
+import DesktopIcons from '../components/DesktopIcons.astro';
+import Dock from '../components/Dock.astro';
+import Window from '../components/Window.astro';
+import About from '../components/windows/About.astro';
+import Medals from '../components/windows/Medals.astro';
+import Projects from '../components/windows/Projects.astro';
+import Credentials from '../components/windows/Credentials.astro';
+import Experience from '../components/windows/Experience.astro';
+import Resume from '../components/windows/Resume.astro';
+import Contact from '../components/windows/Contact.astro';
+import Terminal from '../components/windows/Terminal.astro';
+
+// Optimised WebP wallpaper for the CSS background.
+const podium = await getImage({ src: podiumSrc, format: 'webp', width: 2000 });
+---
+<Base>
+  <SeoContent />
+  <div id="wall" style={`background-image:url(${podium.src})`}></div>
+  <div id="aurora"></div>
+  <IconSprite />
+  <Cursor />
+  <Boot />
+  <Menubar />
+
+  <div id="desktop">
+    <Window id="win-about" icon="i-user" title="about.md - /home/ankush" x="6%" y="9%" w={520} h={540}><About /></Window>
+    <Window id="win-medals" icon="i-award" title="medals.app - competition record 2026" x="40%" y="6%" w={480} h={580}><Medals /></Window>
+    <Window id="win-projects" icon="i-folder" title="~/projects - 4 items" x="18%" y="22%" w={560} h={520}><Projects /></Window>
+    <Window id="win-creds" icon="i-badge" title="credentials.db - all verified 2026" x="50%" y="30%" w={470} h={520}><Credentials /></Window>
+    <Window id="win-xp" icon="i-case" title="experience.log - the work behind the résumé" x="10%" y="36%" w={540} h={460}><Experience /></Window>
+    <Window id="win-resume" icon="i-file" title="Resume.pdf - Preview" x="24%" y="11%" w={560} h={600}><Resume /></Window>
+    <Window id="win-contact" icon="i-signal" title="contact.sh - open a connection" x="56%" y="14%" w={400} h={420}><Contact /></Window>
+    <Window id="win-terminal" icon="i-terminal" title="ankush@patil-os: ~ - zsh" x="30%" y="44%" w={560} h={380} bodyId="term-body"><Terminal /></Window>
+  </div>
+
+  <DesktopIcons />
+  <Dock />
+</Base>
+
+<script>
+  import '../scripts/os';
+</script>

@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/site';
+
+const title = 'Ankush Patil — Cloud Engineer in Toronto | AWS Solutions Architect';
+const description =
+  'Ankush Patil is an AWS-certified Cloud Engineer in Toronto — cloud architecture, security, Terraform, and DevOps. Gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing, 2026. Open to Cloud Engineer, Cloud Security Engineer, Solutions Architect, and DevOps / Platform roles.';
+const keywords =
+  'Ankush Patil, Cloud Engineer Toronto, AWS Solutions Architect Toronto, Cloud Security Engineer, DevOps Engineer Toronto, AWS certified, Terraform, Kubernetes, Azure, Cloud Architecture, Skills Ontario, Skills Canada Nationals, cloud computing, hire cloud engineer Toronto';
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // "/ankush-portfolio"
+const canonical = new URL(base + '/', Astro.site).href;
+const ogImage = new URL(base + '/og.jpg', Astro.site).href;
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: 'Cloud Engineer',
+  description:
+    'AWS-certified Cloud Engineer in Toronto specializing in cloud architecture, security operations, and infrastructure-as-code.',
+  email: `mailto:${profile.email}`,
+  url: canonical,
+  image: ogImage,
+  address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressRegion: 'ON', addressCountry: 'CA' },
+  sameAs: [profile.github, profile.linkedin],
+  nationality: { '@type': 'Country', name: 'Canada' },
+  knowsAbout: [
+    'Cloud Architecture',
+    'Amazon Web Services',
+    'AWS Solutions Architecture',
+    'Cybersecurity',
+    'Cloud Security',
+    'Terraform',
+    'Kubernetes',
+    'Amazon EKS',
+    'Microsoft Azure',
+    'CI/CD',
+    'CrowdStrike Falcon',
+    'Splunk',
+    'Python',
+  ],
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'Cloud Engineer',
+    occupationLocation: { '@type': 'City', name: 'Toronto, Ontario, Canada' },
+    skills: 'AWS, Terraform, Kubernetes, Azure, cloud security, CI/CD, Python',
+  },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Seneca Polytechnic' },
+    { '@type': 'CollegeOrUniversity', name: 'Georgian College' },
+  ],
+  hasCredential: [
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certification', name: 'AWS Certified Solutions Architect – Associate' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certification', name: 'AWS Certified AI Practitioner' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certification', name: 'AWS Certified Cloud Practitioner' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certification', name: 'Google Cybersecurity Professional Certificate' },
+  ],
+  award: ['Gold — Skills Ontario 2026 (Cloud Computing)', 'Silver — Skills Canada Nationals 2026 (Cloud Computing)'],
+  seeks: {
+    '@type': 'Demand',
+    name: 'Cloud Engineer, Cloud Security Engineer, Solutions Architect, or DevOps / Platform roles',
+  },
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={base + '/favicon.svg'} type="image/svg+xml" />
+    <meta name="theme-color" content="#0a0908" />
+    <meta name="author" content={profile.name} />
+    <meta name="geo.placename" content="Toronto, Ontario, Canada" />
+    <meta name="geo.region" content="CA-ON" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Ankush Patil — Cloud Engineer, Toronto" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:site_name" content="Ankush Patil — Cloud Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

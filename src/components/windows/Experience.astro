@@ -1,0 +1,13 @@
+---
+import { experience } from '../../data/site';
+---
+{experience.map((job) => (
+  <div class="xp">
+    <span class="dot"></span>
+    <div class="role">{job.title}</div>
+    <div class="meta"><span class="yr-inline">{job.year}</span> · {job.meta}</div>
+    <ul class="list">
+      {job.bullets.map((b) => <li>{b}</li>)}
+    </ul>
+  </div>
+))}

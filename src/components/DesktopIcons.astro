@@ -1,0 +1,19 @@
+---
+const icons = [
+  ['win-about', 'i-user', 'about.md'],
+  ['win-medals', 'i-award', 'medals.app'],
+  ['win-projects', 'i-folder', 'projects'],
+  ['win-creds', 'i-badge', 'credentials.db'],
+  ['win-xp', 'i-case', 'experience.log'],
+  ['win-resume', 'i-file', 'Resume.pdf'],
+  ['win-contact', 'i-signal', 'contact.sh'],
+];
+---
+<div id="icons">
+  {icons.map(([id, icon, label]) => (
+    <div class="icon" data-open={id}>
+      <span class="glyph"><svg class="ic"><use href={`#${icon}`}></use></svg></span>
+      <span class="lbl">{label}</span>
+    </div>
+  ))}
+</div>

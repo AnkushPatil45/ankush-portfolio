@@ -1,0 +1,20 @@
+---
+const dock = [
+  ['win-about', 'i-user', 'About'],
+  ['win-medals', 'i-award', 'Medals 2026'],
+  ['win-projects', 'i-folder', 'Projects'],
+  ['win-creds', 'i-badge', 'Credentials'],
+  ['win-xp', 'i-case', 'Experience'],
+  ['win-resume', 'i-file', 'Résumé'],
+  ['win-contact', 'i-signal', 'Contact'],
+  ['win-terminal', 'i-terminal', 'Terminal'],
+];
+---
+<div id="dock">
+  {dock.map(([id, icon, tip]) => (
+    <button class="dock-btn" data-open={id} aria-label={tip}>
+      <svg class="ic"><use href={`#${icon}`}></use></svg>
+      <span class="tip">{tip}</span>
+    </button>
+  ))}
+</div>

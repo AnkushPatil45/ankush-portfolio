@@ -1,0 +1,16 @@
+---
+import { projects } from '../../data/site';
+---
+{projects.map((p, i) => (
+  <div class="proj">
+    <div class="row">
+      <span class="name">
+        <span class="num">{String(i + 1).padStart(2, '0')}</span>
+        {p.href ? <a href={p.href} target="_blank" rel="noopener">{p.label}</a> : p.label}
+      </span>
+      <span class="yr">{p.tag}</span>
+    </div>
+    <p>{p.blurb}</p>
+    <div class="tagrow">{p.stack.map((s) => <span>{s}</span>)}</div>
+  </div>
+))}

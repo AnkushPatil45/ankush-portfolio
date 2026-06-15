@@ -1,0 +1,23 @@
+---
+const nav = [
+  ['win-about', 'About'],
+  ['win-medals', 'Medals'],
+  ['win-projects', 'Projects'],
+  ['win-creds', 'Credentials'],
+  ['win-xp', 'Experience'],
+  ['win-resume', 'Résumé'],
+  ['win-contact', 'Contact'],
+  ['win-terminal', 'Terminal'],
+];
+---
+<div id="menubar">
+  <span class="os" title="PatilOS"><span class="wm">patil<b>OS</b></span><i class="caret"></i></span>
+  {nav.map(([id, label]) => <span class="item" data-open={id}>{label}</span>)}
+  <div class="right">
+    <span class="status" title="Open to Cloud Engineer roles"><i class="sdot"></i> Available for work</span>
+    <span class="sep">·</span>
+    <span class="loc">Toronto, ON</span>
+    <span id="snd" class="mb-btn" title="Toggle sound"><svg class="ic ic-sm"><use href="#i-vol"></use></svg></span>
+    <span id="clock" title="Local time">--:--</span>
+  </div>
+</div>
