@@ -1,9 +1,10 @@
 ---
 import { profile, experience, education, awsCerts, otherCerts, medals, skills } from '../../data/site';
+const resumeUrl = import.meta.env.BASE_URL + 'Ankush_Patil_Resume.pdf';
 ---
 <div class="resume-bar">
   <span class="ttl">Résumé · Ankush Patil</span>
-  <span class="ttl" style="color:var(--gold)">Cloud Engineer</span>
+  <a class="resume-dl" href={resumeUrl} download="Ankush_Patil_Resume.pdf">↓ Download PDF</a>
 </div>
 <div class="resume-doc" id="resume-doc">
   <div class="r-name">{profile.name}</div>
