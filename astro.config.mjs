@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Static portfolio, deployed to GitHub Pages.
 export default defineConfig({
-  site: 'https://ankushpatil45.github.io',
-  base: '/ankush-portfolio',
+  site: 'https://ankushpatil.com',
   trailingSlash: 'ignore',
   integrations: [
     sitemap({
