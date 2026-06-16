@@ -17,7 +17,8 @@ export default defineConfig({
     }),
   ],
   build: {
-    inlineStylesheets: 'auto',
+    // inline all CSS into the HTML head → no render-blocking stylesheet request
+    inlineStylesheets: 'always',
   },
   image: {
     // Astro uses sharp by default; allow modern formats.

@@ -19,8 +19,8 @@
   --accent-2:#9A8CFF;
   --warn:#D9A23F;
   --serif:'Fraunces',Georgia,serif;
-  --sans:'Space Grotesk',system-ui,sans-serif;
-  --mono:'JetBrains Mono',monospace;
+  --sans:'Space Grotesk Variable',system-ui,sans-serif;
+  --mono:'JetBrains Mono Variable',ui-monospace,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}

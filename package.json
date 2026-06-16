@@ -11,6 +11,9 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
+    "@fontsource/fraunces": "^5.2.9",
     "astro": "^5.4.0"
   },
   "devDependencies": {
