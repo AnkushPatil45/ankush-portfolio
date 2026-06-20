@@ -6,8 +6,11 @@ import { experience } from '../../data/site';
     <span class="dot"></span>
     <div class="role">{job.title}</div>
     <div class="meta"><span class="yr-inline">{job.year}</span> · {job.meta}</div>
+    <div class="ctx">{job.context}</div>
+    <div class="scope">{job.scope}</div>
     <ul class="list">
       {job.bullets.map((b) => <li>{b}</li>)}
     </ul>
+    <div class="tagrow">{job.tags.map((t) => <span>{t}</span>)}</div>
   </div>
 ))}

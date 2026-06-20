@@ -374,9 +374,9 @@ contact.sh`),
   skills: () =>
     print(`cloud      AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS
 iac        Terraform · CI/CD (GitHub Actions)
-security   CrowdStrike Falcon · Splunk SIEM · least privilege · MFA
+security   CrowdStrike Falcon · CyberArk Application Control · least privilege · MFA
 azure      Azure Arc · P2S VPN · Azure SQL · Cosmos DB · ZRS
-code       Python · PowerShell · SQL`),
+code       Python · SQL · JavaScript / TypeScript`),
   medals: () =>
     print(`<span class="au">🥇 GOLD   - Skills Ontario 2026</span> (provincial championships, cloud computing)
 <span class="ag">🥈 SILVER - Skills Canada Nationals 2026, Toronto</span> (representing Ontario)`),

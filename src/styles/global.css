@@ -480,6 +480,9 @@ body.cursor-on #cursor{opacity:1}
 .xp .role{font-size:14px;font-weight:600;color:var(--text)}
 .xp .meta{font-family:var(--mono);font-size:11px;color:var(--dim);margin:3px 0 9px}
 .xp .meta .yr-inline{color:var(--gold)}
+.xp .ctx{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--dim);margin:-4px 0 7px}
+.xp .scope{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.4;color:#e8dfc8;margin:0 0 9px}
+.xp .tagrow{margin-top:11px}
 
 /* refined medal cards: metal accent rail + large place */
 .medal-card{border-radius:13px;padding:16px 18px;padding-left:20px}

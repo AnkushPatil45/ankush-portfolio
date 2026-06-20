@@ -98,28 +98,44 @@ export const projects: Project[] = [
   },
 ];
 
-export type Job = { title: string; meta: string; year: string; bullets: string[] };
+export type Job = {
+  title: string;
+  meta: string;
+  year: string;
+  context: string;
+  scope: string;
+  bullets: string[];
+  tags: string[];
+};
 export const experience: Job[] = [
   {
     title: 'Cyber Security Analyst - Intact (Co-op)',
     meta: 'Toronto, ON · Hybrid',
     year: '2025',
+    context: "Intact - Canada's largest property & casualty insurer · enterprise security operations",
+    scope: 'Endpoint application control, sensor hygiene, and data-protection support in a hybrid enterprise SOC.',
     bullets: [
-      'Administered CrowdStrike Falcon endpoint security - asset visibility and device compliance across the enterprise.',
-      'Investigated alerts to root cause; remediated MFA enforcement gaps.',
-      'Managed access provisioning across 130,000+ enterprise applications on least privilege.',
-      'Delivered monthly compliance reports to IT leadership; ran L1/L2 incident triage.',
+      'CyberArk Application Control: analyzed and categorized 100,000+ Windows and 30,000+ macOS applications (allow / block / validate) to shape least-privilege policies governing which software can run and install on endpoints.',
+      'Improved CrowdStrike endpoint hygiene across a 50,000+ device estate - surfaced unmanaged assets (no sensor installed) and outdated sensor versions, restoring protected, current coverage.',
+      'Remediated MFA enforcement gaps across ~500 user accounts and delivered monthly compliance reporting to IT leadership.',
+      'Provided operational support to the Data Protection team, helping keep endpoint protection comprehensive.',
+      'Researched and co-presented a Lunch & Learn on AI-driven social engineering, sharing practical insight on an emerging threat across the security org.',
+      'Deepening expertise via CrowdStrike University and Varonis training; pursuing the CrowdStrike Falcon Administrator certification.',
     ],
+    tags: ['CyberArk Application Control', 'CrowdStrike Falcon', 'Endpoint hygiene', 'MFA', 'Data protection', 'Least privilege'],
   },
   {
     title: 'Software Engineer - Persistent Systems',
     meta: 'Pune · On-site',
     year: '2022 - 2023',
+    context: 'Persistent Systems - global IT services & digital engineering firm',
+    scope: 'Early-career backend software engineering on enterprise application delivery.',
     bullets: [
-      'Monitored Splunk SIEM for brute-force attempts and anomalous access patterns.',
-      'Built Python and PowerShell automation for network exposure scanning.',
-      'Implemented SQL Server TDE and RBAC; supported incident response.',
+      'Developed and maintained backend services in Python within an enterprise software delivery team.',
+      'Worked with SQL databases - queries, data access, and support for application data models.',
+      'Contributed to web application features across the backend and JavaScript / TypeScript layers.',
     ],
+    tags: ['Python', 'SQL', 'JavaScript / TypeScript', 'Backend services'],
   },
 ];
 
@@ -150,7 +166,7 @@ export const openTo = ['Cloud Engineer', 'Cloud Security Engineer', 'Solutions A
 export const skills: Record<string, string> = {
   cloud: 'AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS',
   iac: 'Terraform · CI/CD (GitHub Actions)',
-  security: 'CrowdStrike Falcon · Splunk SIEM · least privilege · MFA',
+  security: 'CrowdStrike Falcon · CyberArk Application Control · least privilege · MFA',
   azure: 'Azure Arc · P2S VPN · Azure SQL · Cosmos DB · ZRS',
-  code: 'Python · PowerShell · SQL',
+  code: 'Python · SQL · JavaScript / TypeScript',
 };

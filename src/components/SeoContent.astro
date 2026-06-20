@@ -18,8 +18,9 @@ import { profile, experience, education, awsCerts, otherCerts, projects, openTo,
   {experience.map((j) => (
     <section>
       <h3>{j.title} ({j.year})</h3>
-      <p>{j.meta}</p>
+      <p>{j.meta}. {j.context}. {j.scope}</p>
       <ul>{j.bullets.map((b) => <li>{b}</li>)}</ul>
+      <p>Tools: {j.tags.join(', ')}.</p>
     </section>
   ))}
 
