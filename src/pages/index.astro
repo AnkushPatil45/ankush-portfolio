@@ -16,7 +16,6 @@ import Medals from '../components/windows/Medals.astro';
 import Projects from '../components/windows/Projects.astro';
 import Credentials from '../components/windows/Credentials.astro';
 import Experience from '../components/windows/Experience.astro';
-import Resume from '../components/windows/Resume.astro';
 import Contact from '../components/windows/Contact.astro';
 import Terminal from '../components/windows/Terminal.astro';
 
@@ -38,7 +37,6 @@ const podium = await getImage({ src: podiumSrc, format: 'webp', width: 2000 });
     <Window id="win-projects" icon="i-folder" title="~/projects - 4 items" x="18%" y="22%" w={560} h={520}><Projects /></Window>
     <Window id="win-creds" icon="i-badge" title="credentials.db - all verified 2026" x="50%" y="30%" w={470} h={520}><Credentials /></Window>
     <Window id="win-xp" icon="i-case" title="experience.log - the work behind the résumé" x="10%" y="36%" w={540} h={460}><Experience /></Window>
-    <Window id="win-resume" icon="i-file" title="Resume.pdf - Preview" x="24%" y="11%" w={560} h={600}><Resume /></Window>
     <Window id="win-contact" icon="i-signal" title="contact.sh - open a connection" x="56%" y="14%" w={400} h={420}><Contact /></Window>
     <Window id="win-terminal" icon="i-terminal" title="ankush@patil-os: ~ - zsh" x="30%" y="44%" w={560} h={380} bodyId="term-body"><Terminal /></Window>
   </div>

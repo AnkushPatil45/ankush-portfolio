@@ -87,9 +87,10 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
   box-shadow:0 0 8px rgba(240,182,75,.7);animation:caretBlink 1.1s steps(1) infinite}
 @keyframes caretBlink{50%{opacity:0}}
 /* quick links (desktop) — recruiter essentials, always visible in the menubar */
-#menubar .ql{display:inline-flex;align-items:center;gap:14px}
-#menubar .ql-a{display:inline-flex;align-items:center;gap:5px;color:var(--dim);text-decoration:none;transition:color .2s}
-#menubar .ql-a span{font-family:var(--mono);font-size:12px;letter-spacing:.01em}
+#menubar .ql{display:inline-flex;align-items:center;gap:16px}
+#menubar .ql-a{display:inline-flex;align-items:center;gap:6px;line-height:1;color:var(--dim);text-decoration:none;transition:color .2s}
+#menubar .ql-a .ic{width:14px;height:14px;flex:none;display:block}
+#menubar .ql-a span{font-family:var(--mono);font-size:12px;letter-spacing:.01em;line-height:1}
 #menubar .ql-a:hover{color:var(--text)}
 #menubar .ql-a.primary{color:var(--gold)}
 #menubar .ql-a.primary:hover{filter:brightness(1.15)}
@@ -288,27 +289,6 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
 /* quick links (mobile bottom action bar) — hidden on desktop, shown ≤760px */
 #quickbar{display:none}
 
-/* ============ RESUME WINDOW ============ */
-#win-resume .win-body{padding:0}
-.resume-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:10px;
-  padding:12px 22px;background:var(--win-head);border-bottom:1px solid var(--edge)}
-.resume-bar .ttl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-.resume-dl{font-family:var(--mono);font-size:11.5px;color:#1a1206;background:var(--accent);border:none;border-radius:7px;
-  padding:8px 14px;cursor:pointer;font-weight:700;transition:filter .2s,transform .15s;display:inline-flex;gap:7px;align-items:center}
-.resume-dl:hover{filter:brightness(1.12);transform:translateY(-1px)}
-.resume-doc{padding:24px 26px}
-.resume-doc .r-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;color:var(--text);letter-spacing:-.01em}
-.resume-doc .r-tag{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em;margin-top:3px}
-.resume-doc .r-contact{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 14px}
-.resume-doc .r-contact a{color:var(--accent-2);text-decoration:none}
-.r-sec{margin-top:22px}
-.r-sec>h4{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-  padding-bottom:6px;border-bottom:1px solid var(--edge);margin-bottom:12px}
-.r-job .row{align-items:baseline}
-.r-job b{color:var(--text);font-size:13.5px}
-.r-job .r-meta{font-family:var(--mono);font-size:11px;color:var(--dim);margin:2px 0 6px}
-.r-job+.r-job{margin-top:14px}
-
 /* ============ CUSTOM CURSOR - focus reticle ============ */
 #cursor{position:fixed;top:0;left:0;z-index:9999;width:26px;height:26px;pointer-events:none;transform:translate(-50%,-50%);
   opacity:0;transition:width .22s cubic-bezier(.2,.8,.25,1),height .22s cubic-bezier(.2,.8,.25,1),opacity .3s}
@@ -357,9 +337,6 @@ body.cursor-on #cursor{opacity:1}
   .badge-grid{grid-template-columns:repeat(3,1fr);gap:8px}
   .badge img{width:54px;height:54px}
   .stat .num{font-size:26px}
-  #win-resume .win-body{padding:0}
-  .resume-doc{padding:18px 16px}
-  .resume-bar{padding:11px 16px}
 
   #dock{left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom));width:auto;max-width:96vw;
     gap:2px;padding:7px 8px;border-radius:16px;overflow-x:auto;scrollbar-width:none;justify-content:center}
@@ -413,26 +390,6 @@ body.cursor-on #cursor{opacity:1}
   .window .win-photo,.window .win-figure,.window .proj,.window .medal-card,.window .r-sec{opacity:1;transform:none;clip-path:none;transition:none}
   .window.open .win-photo::before{animation:none}
   .win-photo:hover img,.win-figure:hover img,.win-photo:hover,.win-figure:hover{transform:none}
-}
-
-/* ============ PRINT: Resume only ============ */
-@media print{
-  body{overflow:visible;background:#fff;color:#111}
-  body::before,body::after,#boot,#menubar,#icons,#dock,#snap-preview,#wall,#aurora,#cursor,.win-head,.resume-bar{display:none!important}
-  .window{display:none!important}
-  #win-resume{display:flex!important;position:static!important;width:100%!important;height:auto!important;
-    box-shadow:none!important;border:none!important;background:#fff!important;opacity:1!important;transform:none!important}
-  #win-resume .win-body{padding:0;overflow:visible}
-  .resume-doc{padding:0}
-  .resume-doc .r-name{color:#111}
-  .r-tag{color:#0a7a52!important}
-  .r-sec>h4{color:#0a7a52!important;border-color:#ccc!important}
-  .r-job b,.list li{color:#111!important}
-  .r-meta,.r-contact{color:#444!important}
-  .r-contact a,.proj .name a{color:#0a58ca!important}
-  .list li{border-color:#eee!important}
-  .tagrow span{color:#0a58ca!important;border-color:#bbb!important;background:#f4f7ff!important}
-  .yr{color:#b06a00!important}
 }
 
 /* ============================================================

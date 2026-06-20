@@ -341,7 +341,7 @@ const cmds = {
   <span class="em">ls</span>          - list desktop items     <span class="em">skills</span>     - core skills
   <span class="em">medals</span>      - 2026 competition record <span class="em">projects</span>   - selected work
   <span class="em">certs</span>       - credentials (2026)      <span class="em">education</span>  - schools &amp; GPA
-  <span class="em">experience</span>  - work behind the résumé  <span class="em">resume</span>     - open Resume.pdf
+  <span class="em">experience</span>  - work behind the résumé
   <span class="em">contact</span> / <span class="em">social</span> - reach me     <span class="em">date</span> · <span class="em">pwd</span> · <span class="em">echo</span> &lt;text&gt;
   <span class="em">open &lt;name&gt;</span> - open a window         <span class="em">cat &lt;file&gt;</span> - read a "file"
   <span class="em">theme</span>       - cycle accent colour     <span class="em">clear</span>      - wipe the screen
@@ -369,8 +369,7 @@ AWS-first, security always. 4.0 GPA ×2 programs. Authorized to work in Canada.`
     ),
   ls: () =>
     print(`about.md        medals.app      projects/
-credentials.db  experience.log  Resume.pdf
-contact.sh`),
+credentials.db  experience.log  contact.sh`),
   skills: () =>
     print(`cloud      AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS
 iac        Terraform · CI/CD (GitHub Actions)
@@ -396,10 +395,6 @@ SVKM's IoT, Dhule    B.Tech, Computer Engineering                <span class="em
   experience: () =>
     print(`2025       Cyber Security Analyst - Intact (co-op, Toronto)
 2022-2023  Software Engineer - Persistent Systems (Pune)`),
-  resume: () => {
-    openWin('win-resume');
-    print('opening résumé…', 'ok');
-  },
   contact: () =>
     print(
       `email     <a href="mailto:ankushgp@icloud.com">ankushgp@icloud.com</a>
@@ -429,7 +424,6 @@ const winAlias = {
   credentials: 'win-creds',
   xp: 'win-xp',
   experience: 'win-xp',
-  resume: 'win-resume',
   contact: 'win-contact',
   terminal: 'win-terminal',
 };
@@ -441,7 +435,6 @@ const catMap = {
   projects: 'projects',
   'credentials.db': 'certs',
   'experience.log': 'experience',
-  'resume.pdf': 'resume',
   'contact.sh': 'contact',
 };
 const hist = [];

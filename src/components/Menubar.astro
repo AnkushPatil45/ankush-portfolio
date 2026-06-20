@@ -1,13 +1,11 @@
 ---
 import { profile } from '../data/site';
-const resumeUrl = import.meta.env.BASE_URL + 'Ankush_Patil_Resume.pdf';
 const nav = [
   ['win-about', 'About'],
   ['win-medals', 'Medals'],
   ['win-projects', 'Projects'],
   ['win-creds', 'Credentials'],
   ['win-xp', 'Experience'],
-  ['win-resume', 'Résumé'],
   ['win-contact', 'Contact'],
   ['win-terminal', 'Terminal'],
 ];
@@ -17,7 +15,6 @@ const nav = [
   {nav.map(([id, label]) => <span class="item" data-open={id}>{label}</span>)}
   <div class="right">
     <nav class="ql" aria-label="Quick links">
-      <a class="ql-a primary" href={resumeUrl} download="Ankush_Patil_Resume.pdf" title="Download résumé (PDF)"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-file"></use></svg><span>Résumé</span></a>
       <a class="ql-a" href={profile.linkedin} target="_blank" rel="noopener" title="LinkedIn profile"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a>
       <a class="ql-a" href={profile.github} target="_blank" rel="noopener" title="GitHub profile"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub</span></a>
       <a class="ql-a" href={`mailto:${profile.email}`} title="Email Ankush"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-mail"></use></svg><span>Email</span></a>
