@@ -3,13 +3,17 @@
 // GitHub, email) always visible in the thumb zone, just above the dock.
 // Hidden on desktop (the menubar carries these there).
 import { profile } from '../data/site';
+const resumeUrl = import.meta.env.BASE_URL + 'Ankush_Patil_CV.pdf';
 ---
 <nav id="quickbar" aria-label="Quick links">
+  <a class="qb-a primary" href={resumeUrl} download="Ankush_Patil_CV.pdf">
+    <svg class="ic" aria-hidden="true"><use href="#i-file"></use></svg><span>Résumé</span>
+  </a>
   <a class="qb-a" href={profile.linkedin} target="_blank" rel="noopener">
-    <svg class="ic" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
+    <svg class="ic ic-brand" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
   </a>
   <a class="qb-a" href={profile.github} target="_blank" rel="noopener">
-    <svg class="ic" aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub</span>
+    <svg class="ic ic-brand" aria-hidden="true"><use href="#i-github"></use></svg><span>GitHub</span>
   </a>
   <a class="qb-a" href={`mailto:${profile.email}`}>
     <svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg><span>Email</span>

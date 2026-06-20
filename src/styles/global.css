@@ -89,7 +89,8 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
 /* quick links (desktop) — recruiter essentials, always visible in the menubar */
 #menubar .ql{display:inline-flex;align-items:center;gap:16px}
 #menubar .ql-a{display:inline-flex;align-items:center;gap:6px;line-height:1;color:var(--dim);text-decoration:none;transition:color .2s}
-#menubar .ql-a .ic{width:14px;height:14px;flex:none;display:block}
+#menubar .ql-a .ic{width:15px;height:15px;flex:none;display:block}
+#menubar .ql-a .ic.ic-brand{width:13px;height:13px}
 #menubar .ql-a span{font-family:var(--mono);font-size:12px;letter-spacing:.01em;line-height:1}
 #menubar .ql-a:hover{color:var(--text)}
 #menubar .ql-a.primary{color:var(--gold)}
@@ -358,6 +359,7 @@ body.cursor-on #cursor{opacity:1}
     color:var(--text);padding:7px 12px;border-radius:9px;min-width:60px;transition:background .2s}
   #quickbar .qb-a:active{background:rgba(154,140,255,.12)}
   #quickbar .qb-a .ic{width:21px;height:21px}
+  #quickbar .qb-a .ic.ic-brand{width:18px;height:18px}
   #quickbar .qb-a span{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--dim)}
   #quickbar .qb-a.primary .ic{color:var(--gold)}
   #quickbar .qb-a.primary span{color:var(--gold)}
