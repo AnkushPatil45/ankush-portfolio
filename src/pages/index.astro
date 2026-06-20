@@ -9,6 +9,7 @@ import Boot from '../components/Boot.astro';
 import Menubar from '../components/Menubar.astro';
 import DesktopIcons from '../components/DesktopIcons.astro';
 import Dock from '../components/Dock.astro';
+import QuickBar from '../components/QuickBar.astro';
 import Window from '../components/Window.astro';
 import About from '../components/windows/About.astro';
 import Medals from '../components/windows/Medals.astro';
@@ -43,6 +44,7 @@ const podium = await getImage({ src: podiumSrc, format: 'webp', width: 2000 });
   </div>
 
   <DesktopIcons />
+  <QuickBar />
   <Dock />
 </Base>
 

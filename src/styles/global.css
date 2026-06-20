@@ -86,6 +86,15 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
 #menubar .os .caret{display:inline-block;width:7px;height:13px;margin-left:3px;border-radius:1px;background:var(--gold);
   box-shadow:0 0 8px rgba(240,182,75,.7);animation:caretBlink 1.1s steps(1) infinite}
 @keyframes caretBlink{50%{opacity:0}}
+/* quick links (desktop) — recruiter essentials, always visible in the menubar */
+#menubar .ql{display:inline-flex;align-items:center;gap:14px}
+#menubar .ql-a{display:inline-flex;align-items:center;gap:5px;color:var(--dim);text-decoration:none;transition:color .2s}
+#menubar .ql-a span{font-family:var(--mono);font-size:12px;letter-spacing:.01em}
+#menubar .ql-a:hover{color:var(--text)}
+#menubar .ql-a.primary{color:var(--gold)}
+#menubar .ql-a.primary:hover{filter:brightness(1.15)}
+@media(max-width:900px){#menubar .ql-a span{display:none}}
+@media(max-width:760px){#menubar .ql{display:none}}
 /* status cluster */
 #menubar .right{margin-left:auto;display:flex;gap:12px;align-items:center}
 #menubar .status{display:inline-flex;align-items:center;gap:6px;color:var(--text)}
@@ -276,6 +285,9 @@ body::after{content:"";position:fixed;inset:0;z-index:96;pointer-events:none;opa
 .dock-btn.pop{animation:dockpop .42s cubic-bezier(.2,.8,.3,1.4)}
 @keyframes dockpop{0%,100%{transform:translateY(0) scale(1)}38%{transform:translateY(-13px) scale(1.16)}}
 
+/* quick links (mobile bottom action bar) — hidden on desktop, shown ≤760px */
+#quickbar{display:none}
+
 /* ============ RESUME WINDOW ============ */
 #win-resume .win-body{padding:0}
 .resume-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:10px;
@@ -330,7 +342,7 @@ body.cursor-on #cursor{opacity:1}
   #menubar .right{gap:14px}
   #menubar #clock{font-size:12px}
 
-  #desktop{padding:58px 10px calc(104px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+  #desktop{padding:58px 10px calc(156px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
   .window{position:static!important;width:100%!important;height:auto!important;min-width:0;opacity:1;transform:none;display:none;
     border-radius:16px;box-shadow:0 16px 38px rgba(0,0,0,.5);backdrop-filter:none;-webkit-backdrop-filter:none;
     background:linear-gradient(180deg,#1c1813,#141009)}
@@ -359,6 +371,19 @@ body.cursor-on #cursor{opacity:1}
   .dock-btn.running{background:rgba(240,182,75,.16)}
   .dock-btn.running .ic{color:var(--gold)}
   .dock-btn .tip{display:none}
+
+  /* bottom action bar — sits just above the dock, in the thumb zone */
+  #quickbar{display:flex;position:fixed;z-index:94;left:50%;transform:translateX(-50%);
+    bottom:calc(74px + env(safe-area-inset-bottom));width:auto;max-width:96vw;gap:4px;padding:5px 6px;
+    border-radius:14px;background:rgba(20,17,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--edge)}
+  #quickbar .qb-a{display:inline-flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;
+    color:var(--text);padding:7px 12px;border-radius:9px;min-width:60px;transition:background .2s}
+  #quickbar .qb-a:active{background:rgba(154,140,255,.12)}
+  #quickbar .qb-a .ic{width:21px;height:21px}
+  #quickbar .qb-a span{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--dim)}
+  #quickbar .qb-a.primary .ic{color:var(--gold)}
+  #quickbar .qb-a.primary span{color:var(--gold)}
 
   #boot{font-size:11px;padding:7vh 6vw;line-height:1.85}
   #boot-logo{font-size:26px;top:3.5vh;right:6vw}
