@@ -129,13 +129,14 @@ export const experience: Job[] = [
     meta: 'Pune · On-site',
     year: '2022 - 2023',
     context: 'Persistent Systems - global IT services & digital engineering firm',
-    scope: 'Early-career backend software engineering on enterprise application delivery.',
+    scope: 'Security-focused engineering across enterprise infrastructure - monitoring, automation, and database hardening.',
     bullets: [
-      'Developed and maintained backend services in Python within an enterprise software delivery team.',
-      'Worked with SQL databases - queries, data access, and support for application data models.',
-      'Contributed to web application features across the backend and JavaScript / TypeScript layers.',
+      'Monitored authentication, system, and network logs in Splunk SIEM to detect brute-force attempts and anomalous access patterns across distributed infrastructure.',
+      'Automated network-exposure scanning with Python and PowerShell, flagging unauthorized open ports and generating daily security-posture reports for infrastructure teams.',
+      'Hardened the data layer with SQL Server TDE and role-based access control (RBAC), enforcing least-privilege data access.',
+      'Supported incident response - isolating affected servers via firewall rules, analyzing traffic in Wireshark, and driving post-incident security improvements.',
     ],
-    tags: ['Python', 'SQL', 'JavaScript / TypeScript', 'Backend services'],
+    tags: ['Splunk SIEM', 'Python', 'PowerShell', 'SQL Server TDE', 'RBAC', 'Wireshark'],
   },
 ];
 
@@ -166,7 +167,7 @@ export const openTo = ['Cloud Engineer', 'Cloud Security Engineer', 'Solutions A
 export const skills: Record<string, string> = {
   cloud: 'AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS',
   iac: 'Terraform · CI/CD (GitHub Actions)',
-  security: 'CrowdStrike Falcon · CyberArk Application Control · least privilege · MFA',
+  security: 'CrowdStrike Falcon · CyberArk Application Control · Splunk SIEM · least privilege',
   azure: 'Azure Arc · P2S VPN · Azure SQL · Cosmos DB · ZRS',
-  code: 'Python · SQL · JavaScript / TypeScript',
+  code: 'Python · PowerShell · SQL',
 };
