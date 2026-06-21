@@ -17,9 +17,9 @@ export const profile = {
   gpa: '4.0 / 4.0',
   awsCerts: '3+',
   summary:
-    "I design and secure cloud infrastructure - AWS first, Azure when the job is hybrid. Software engineering background, enterprise security operations experience, and a 2026 competition season that ended with gold at Skills Ontario and silver at the Skills Canada Nationals in cloud computing.",
+    "Cloud Engineer, Toronto. I design and secure cloud infrastructure the way I was trained to - assuming someone will try to break it. Behind that: a software-engineering background, security-operations experience at one of Canada's largest insurers, and a 2026 season that ended in gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing.",
   ethos:
-    'I like systems that survive failure quietly: multi-AZ by default, least privilege everywhere, infrastructure written as code so it builds the same way twice.',
+    "Good infrastructure is mostly restraint - spend where it buys real resilience, save where it doesn't, lock access down by default, and keep everything in code so there are no surprises at 2 a.m. The goal isn't the most impressive diagram. It's the system nobody has to think about.",
   disciplines: ['Cloud Architecture', 'Cybersecurity', 'AI & Cloud Automation', 'Software Engineering'],
 } as const;
 
