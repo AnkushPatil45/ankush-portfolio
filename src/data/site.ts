@@ -66,9 +66,9 @@ export const projects: Project[] = [
   {
     slug: 'house-of-north/',
     label: 'house-of-north/',
-    tag: 'SENECA CAPSTONE',
+    tag: 'CLIENT PROJECT',
     blurb:
-      'Multi-AZ e-commerce on AWS: ECS Fargate behind CloudFront + WAF, Aurora and ElastiCache in private subnets, KMS throughout, GitHub Actions CI/CD - all in Terraform.',
+      'Production-grade AWS e-commerce infrastructure I designed and delivered end-to-end for House of North, a real client - multi-AZ ECS Fargate behind CloudFront + WAF, Aurora and ElastiCache in private subnets, KMS throughout, GitHub Actions CI/CD, all in Terraform.',
     stack: ['ECS Fargate', 'Aurora', 'ElastiCache', 'WAF', 'KMS', 'CloudFront', 'Terraform'],
   },
   {

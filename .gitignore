@@ -15,3 +15,6 @@ npm-debug.log*
 # env
 .env
 .env.*
+
+# personal resume files (not part of the site)
+*.docx
