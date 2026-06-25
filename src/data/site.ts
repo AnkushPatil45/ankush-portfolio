@@ -68,7 +68,7 @@ export const projects: Project[] = [
     label: 'house-of-north/',
     tag: 'CLIENT PROJECT',
     blurb:
-      'Production-grade AWS e-commerce infrastructure I designed and delivered end-to-end for House of North, a real client - multi-AZ ECS Fargate behind CloudFront + WAF, Aurora and ElastiCache in private subnets, KMS throughout, GitHub Actions CI/CD, all in Terraform.',
+      'Production-grade AWS e-commerce infrastructure I designed and delivered end-to-end for House of North - multi-AZ ECS Fargate behind CloudFront + WAF, Aurora and ElastiCache in private subnets, KMS throughout, GitHub Actions CI/CD, all in Terraform.',
     stack: ['ECS Fargate', 'Aurora', 'ElastiCache', 'WAF', 'KMS', 'CloudFront', 'Terraform'],
   },
   {
