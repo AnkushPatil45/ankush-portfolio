@@ -19,6 +19,9 @@ const ogImage = new URL(base + '/og-card-v2.jpg', Astro.site).href;
 // Google Search Console verification token.
 const gscVerification = 'peL8YaqN0GFASW19ekDhiLIwynDsbkDxyRIfI8OmZFA';
 
+// Google Analytics 4 measurement ID.
+const gaId = 'G-YXW401W2XD';
+
 const person = {
   '@type': 'Person',
   '@id': canonical + '#person',
@@ -102,6 +105,16 @@ const personLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+    <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
