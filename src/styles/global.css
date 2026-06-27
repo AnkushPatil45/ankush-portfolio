@@ -348,6 +348,8 @@ body.cursor-on #cursor{opacity:1}
   .dock-btn:hover{transform:none;background:transparent}
   .dock-btn.running{background:rgba(240,182,75,.16)}
   .dock-btn.running .ic{color:var(--gold)}
+  /* move the running dot INSIDE the button so the dock's overflow-x:auto can't clip it */
+  .dock-btn::after{bottom:3px}
   .dock-btn .tip{display:none}
 
   /* bottom action bar - sits just above the dock, in the thumb zone */
