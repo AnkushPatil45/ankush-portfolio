@@ -73,7 +73,10 @@ function openWin(id) {
     (el as HTMLElement).style.transitionDelay = 60 + i * 70 + 'ms';
   });
   w.style.display = 'flex';
-  requestAnimationFrame(() => w.classList.add('open'));
+  requestAnimationFrame(() => {
+    w.classList.add('open');
+    syncDock(); // re-sync after `.open` lands so the last-opened window is never missed
+  });
   focusWin(w);
   syncDock();
   if (!wasOpen) sfx('open');
@@ -89,6 +92,7 @@ function closeWin(w) {
   sfx('close');
   w.classList.add('closing');
   w.classList.remove('open');
+  syncDock(); // clear the dock indicator immediately on close
   setTimeout(() => {
     w.style.display = 'none';
     w.classList.remove('closing');
@@ -111,7 +115,11 @@ addEventListener('resize', updateLauncherHint);
 function syncDock() {
   document.querySelectorAll('.dock-btn').forEach((b) => {
     const w = document.getElementById(b.dataset.open);
-    b.classList.toggle('running', w && w.classList.contains('open'));
+    // Read the inline display set synchronously in openWin/closeWin rather than
+    // the `.open` class (which lands one animation frame later) - so the running
+    // indicator (gold icon + dot) appears on the FIRST click, not the second.
+    const running = !!w && (w as HTMLElement).style.display === 'flex' && !w.classList.contains('closing');
+    b.classList.toggle('running', running);
   });
   updateLauncherHint();
 }
