@@ -6,8 +6,7 @@
 export const profile = {
   name: 'Ankush Patil',
   role: 'Cloud Engineer',
-  location: 'Toronto, Ontario, Canada',
-  workStatus: 'Authorized to work in Canada',
+  workStatus: 'Open to Cloud Engineer roles across Canada and India, on-site or remote',
   available: true,
   email: 'ankushgp@icloud.com',
   github: 'https://github.com/AnkushPatil45',
@@ -17,7 +16,7 @@ export const profile = {
   gpa: '4.0 / 4.0',
   awsCerts: '3+',
   summary:
-    "Cloud Engineer, Toronto. I design and secure cloud infrastructure the way I was trained to - assuming someone will try to break it. Behind that: a software-engineering background, security-operations experience at one of Canada's largest insurers, and a 2026 season that ended in gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing.",
+    "Cloud Engineer. I design and secure cloud infrastructure the way I was trained to - assuming someone will try to break it. Behind that: a software-engineering background, security-operations experience at one of Canada's largest insurers, and a 2026 season that ended in gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing.",
   ethos:
     "Good infrastructure is mostly restraint - spend where it buys real resilience, save where it doesn't, lock access down by default, and keep everything in code so there are no surprises at 2 a.m. The goal isn't the most impressive diagram. It's the system nobody has to think about.",
   disciplines: ['Cloud Architecture', 'Cybersecurity', 'AI & Cloud Automation', 'Software Engineering'],
@@ -48,7 +47,7 @@ export const medals: Medal[] = [
   {
     metal: 'silver',
     label: 'Silver',
-    event: 'Skills Canada Nationals - Toronto, representing Ontario',
+    event: 'Skills Canada Nationals - representing Ontario',
     year: '2026',
     note: 'Second in the country, on a floor where every competitor was a provincial champion.',
   },
@@ -109,8 +108,8 @@ export type Job = {
 };
 export const experience: Job[] = [
   {
-    title: 'Cyber Security Analyst - Intact (Co-op)',
-    meta: 'Toronto, ON · Hybrid',
+    title: 'Cyber Security Analyst - Intact',
+    meta: 'Hybrid',
     year: '2025',
     context: "Intact - Canada's largest property & casualty insurer · enterprise security operations",
     scope: 'Endpoint application control, sensor hygiene, and data-protection support in a hybrid enterprise SOC.',
@@ -147,8 +146,8 @@ export const awsCerts: Cert[] = [
   { name: 'Cloud Practitioner', year: '2026' },
 ];
 export const otherCerts: Cert[] = [
-  { name: 'Google Cybersecurity Professional Certificate', year: '2026' },
-  { name: '28 CrowdStrike certifications · 7 domains', year: '2026' },
+  { name: 'Google Cybersecurity Professional Certificate', year: '2023' },
+  { name: '28 CrowdStrike certifications · 7 domains', year: '2025' },
 ];
 
 // Badge image basenames (kebab-case files live in src/assets/badges).
