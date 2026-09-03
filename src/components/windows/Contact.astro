@@ -1,12 +1,12 @@
 ---
 import { profile, openTo } from '../../data/site';
-const resumeUrl = import.meta.env.BASE_URL + 'Ankush_Patil_CV.pdf';
+const resumeUrl = import.meta.env.BASE_URL + 'Ankush_Patil_Resume.pdf';
 ---
 <h2>Open a connection</h2>
 <p class="sub">status: open to work · on-site or remote</p>
 <div class="cta">
   <a href={`mailto:${profile.email}`}><span><b>$</b> mail ankush</span><span class="sub">{profile.email}</span></a>
-  <a href={resumeUrl} download="Ankush_Patil_CV.pdf"><span><b>$</b> download resume</span><span class="sub">Ankush_Patil_CV.pdf</span></a>
+  <a href={resumeUrl} download="Ankush_Patil_Resume.pdf"><span><b>$</b> download resume</span><span class="sub">Ankush_Patil_Resume.pdf</span></a>
   <a href={profile.github} target="_blank" rel="noopener"><span><b>$</b> git clone</span><span class="sub">{profile.githubHandle}</span></a>
   <a href={profile.linkedin} target="_blank" rel="noopener"><span><b>$</b> connect</span><span class="sub">{profile.linkedinHandle}</span></a>
 </div>

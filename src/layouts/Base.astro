@@ -7,11 +7,11 @@ import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 import { profile } from '../data/site';
 
-const title = 'Ankush Patil - Cloud Engineer & AWS Solutions Architect | Canada & India';
+const title = 'Ankush Patil - Cloud Architect | AWS & Azure Solutions Architect';
 const description =
-  'AWS-certified Cloud Engineer & Solutions Architect. Gold & silver at Skills Ontario and Skills Canada Nationals 2026. Open to Cloud, Security & DevOps roles across Canada and India, on-site or remote.';
+  'AWS & Azure Cloud Architect specializing in migration, security and infrastructure-as-code. Gold & silver at Skills Ontario and Skills Canada Nationals 2026. Open to Cloud Architect roles across Canada and India, on-site or remote.';
 const keywords =
-  'Ankush Patil, Cloud Engineer, AWS Solutions Architect, Cloud Security Engineer, DevOps Engineer, Cloud Engineer Canada, Cloud Engineer India, AWS Solutions Architect India, AWS certified, Terraform, Kubernetes, Azure, Cloud Architecture, Skills Ontario, Skills Canada Nationals, cloud computing, hire cloud engineer, remote cloud engineer';
+  'Ankush Patil, Cloud Architect, AWS Solutions Architect, Azure Architect, Cloud Security Engineer, Cloud Architect Canada, Cloud Architect India, AWS Solutions Architect India, AWS certified, Terraform, Kubernetes, Azure, ECS Fargate, Amazon EKS, cloud migration, Cloud Architecture, Skills Ontario, Skills Canada Nationals, cloud computing, hire cloud architect, remote cloud architect';
 const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // "/ankush-portfolio"
 const canonical = new URL(base + '/', Astro.site).href;
 const ogImage = new URL(base + '/og-card-v2.jpg', Astro.site).href;
@@ -26,9 +26,9 @@ const person = {
   '@type': 'Person',
   '@id': canonical + '#person',
   name: profile.name,
-  jobTitle: 'Cloud Engineer',
+  jobTitle: 'Cloud Architect',
   description:
-    'AWS-certified Cloud Engineer specializing in cloud architecture, security operations, and infrastructure-as-code, open to roles across Canada and India.',
+    'AWS & Azure Cloud Architect specializing in cloud migration, security and infrastructure-as-code, open to roles across Canada and India.',
   email: `mailto:${profile.email}`,
   url: canonical,
   image: ogImage,
@@ -42,16 +42,17 @@ const person = {
     'Terraform',
     'Kubernetes',
     'Amazon EKS',
+    'ECS Fargate',
     'Microsoft Azure',
+    'Cloud Migration',
+    'AWS Well-Architected Framework',
     'CI/CD',
-    'CrowdStrike Falcon',
-    'CyberArk Application Control',
-    'Splunk',
+    'Infrastructure as Code',
     'Python',
   ],
   hasOccupation: {
     '@type': 'Occupation',
-    name: 'Cloud Engineer',
+    name: 'Cloud Architect',
     occupationLocation: [
       { '@type': 'Country', name: 'Canada' },
       { '@type': 'Country', name: 'India' },
@@ -71,7 +72,7 @@ const person = {
   award: ['Gold - Skills Ontario 2026 (Cloud Computing)', 'Silver - Skills Canada Nationals 2026 (Cloud Computing)'],
   seeks: {
     '@type': 'Demand',
-    name: 'Cloud Engineer, Cloud Security Engineer, Solutions Architect, or DevOps / Platform roles',
+    name: 'Cloud Architect, Solutions Architect, Cloud Security Engineer, or DevOps / Platform roles',
   },
 };
 
@@ -82,7 +83,7 @@ const personLd = {
       '@type': 'WebSite',
       '@id': canonical + '#website',
       url: canonical,
-      name: 'Ankush Patil, Cloud Engineer',
+      name: 'Ankush Patil, Cloud Architect',
       inLanguage: 'en-CA',
       publisher: { '@id': canonical + '#person' },
     },
@@ -137,15 +138,15 @@ const personLd = {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="Ankush Patil - Cloud Engineer" />
+    <meta property="og:image:alt" content="Ankush Patil - Cloud Architect" />
     <meta property="og:locale" content="en_CA" />
     <meta property="og:locale:alternate" content="en_IN" />
-    <meta property="og:site_name" content="Ankush Patil - Cloud Engineer" />
+    <meta property="og:site_name" content="Ankush Patil - Cloud Architect" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Ankush Patil - Cloud Engineer" />
+    <meta name="twitter:image:alt" content="Ankush Patil - Cloud Architect" />
 
     <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   </head>

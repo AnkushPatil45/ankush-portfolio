@@ -5,8 +5,8 @@
 
 export const profile = {
   name: 'Ankush Patil',
-  role: 'Cloud Engineer',
-  workStatus: 'Open to Cloud Engineer roles across Canada and India, on-site or remote',
+  role: 'Cloud Architect',
+  workStatus: 'Open to Cloud Architect roles across Canada and India, on-site or remote',
   available: true,
   email: 'ankushgp@icloud.com',
   github: 'https://github.com/AnkushPatil45',
@@ -16,15 +16,15 @@ export const profile = {
   gpa: '4.0 / 4.0',
   awsCerts: '3+',
   summary:
-    "Cloud Engineer. I design and secure cloud infrastructure the way I was trained to - assuming someone will try to break it. Behind that: a software-engineering background, security-operations experience at one of Canada's largest insurers, and a 2026 season that ended in gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing.",
+    "Cloud Architect. I design, migrate and secure production workloads on AWS and Azure - and I build them assuming someone will try to break them. I led an enterprise migration from on-premises to a containerized AWS platform, and hardened cloud accounts for one of Canada's largest insurers by shifting security into the delivery pipeline. A 2026 season that ended in gold (Skills Ontario) and silver (Skills Canada Nationals) in cloud computing.",
   ethos:
     "Good infrastructure is mostly restraint - spend where it buys real resilience, save where it doesn't, lock access down by default, and keep everything in code so there are no surprises at 2 a.m. The goal isn't the most impressive diagram. It's the system nobody has to think about.",
-  disciplines: ['Cloud Architecture', 'Cybersecurity', 'AI & Cloud Automation', 'Software Engineering'],
+  disciplines: ['Cloud Architecture', 'Cloud Security', 'Migration & Modernization', 'AI & Cloud Automation'],
 } as const;
 
 export type TimelineItem = { title: string; year: string; w: number };
 export const education: TimelineItem[] = [
-  { title: "B.Tech, Computer Engineering - SVKM's Institute of Technology", year: '2022', w: 40 },
+  { title: "B.Tech, Computer Engineering - SVKM's Institute of Technology", year: '2018-22', w: 40 },
   { title: 'PG Cybersecurity - Georgian College', year: '2024-25', w: 70 },
   { title: 'Cloud Architecture & Administration - Seneca Polytechnic', year: '2025-26', w: 100 },
 ];
@@ -67,8 +67,8 @@ export const projects: Project[] = [
     label: 'house-of-north/',
     tag: 'PRODUCTION AWS',
     blurb:
-      'Production-grade AWS e-commerce infrastructure built for House of North - multi-AZ ECS Fargate behind CloudFront + WAF, Aurora and ElastiCache in private subnets, KMS throughout, GitHub Actions CI/CD, all in Terraform.',
-    stack: ['ECS Fargate', 'Aurora', 'ElastiCache', 'WAF', 'KMS', 'CloudFront', 'Terraform'],
+      'A live AWS e-commerce platform built for House of North - storefront on ECS Fargate behind CloudFront + WAF, an Aurora data tier, KMS throughout, and every environment reproducible through Terraform. Includes an automated Amazon Connect voice flow (Lex, Polly, Transcribe) that deflects routine support contacts.',
+    stack: ['ECS Fargate', 'Aurora', 'CloudFront', 'WAF', 'KMS', 'Terraform', 'Amazon Connect'],
   },
   {
     slug: 'build-roulette/',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     href: 'https://buildroulette.dev',
     tag: 'PERSONAL PROJECT',
     blurb:
-      'A side project about Engineering Decision Records - documenting why systems end up shaped the way they are. Live at buildroulette.dev.',
+      'A side project documenting 5 Engineering Decision Records - the options weighed, trade-offs and final call behind each core design choice. Live at buildroulette.dev.',
     stack: ['Engineering Decision Records', 'Content platform'],
   },
   {
@@ -108,34 +108,33 @@ export type Job = {
 };
 export const experience: Job[] = [
   {
-    title: 'Cyber Security Analyst - Intact',
+    title: 'Cloud Security Engineer - Intact',
     meta: 'Hybrid',
     year: '2025',
-    context: "Intact - Canada's largest property & casualty insurer · enterprise security operations",
-    scope: 'Endpoint application control, sensor hygiene, and data-protection support in a hybrid enterprise SOC.',
+    context: "Intact - Canada's largest property & casualty insurer · cloud security engineering",
+    scope: 'Hardening AWS accounts and shifting security into the delivery pipelines application teams use to provision infrastructure.',
     bullets: [
-      'CyberArk Application Control: analyzed and categorized 100,000+ Windows and 30,000+ macOS applications (allow / block / validate) to shape least-privilege policies governing which software can run and install on endpoints.',
-      'Improved CrowdStrike endpoint hygiene across a 50,000+ device estate - surfaced unmanaged assets (no sensor installed) and outdated sensor versions, restoring protected, current coverage.',
-      'Remediated MFA enforcement gaps across ~500 user accounts and delivered monthly compliance reporting to IT leadership.',
-      'Provided operational support to the Data Protection team, helping keep endpoint protection comprehensive.',
-      'Researched and co-presented a Lunch & Learn on AI-driven social engineering, sharing practical insight on an emerging threat across the security org.',
-      'Deepening expertise via CrowdStrike University and Varonis training; pursuing the CrowdStrike Falcon Administrator certification.',
+      'Embedded with the cloud security team to harden AWS accounts and shift security into the pipelines application teams used to provision infrastructure.',
+      'Built secure-by-default Terraform baselines enforcing network segmentation, least-privilege IAM and mandatory KMS encryption, so teams provisioned compliant environments without hand-rolled, drift-prone configurations.',
+      'Added automated policy checks and security scanning to GitHub Actions pipelines, blocking non-compliant changes - open security groups, unencrypted storage, wildcard IAM - before they reached production.',
+      'Remediated open security-scan findings by scoping over-permissive IAM to least-privilege and closing encryption and public-access gaps on S3 and RDS, clearing the backlog ahead of an internal compliance review.',
     ],
-    tags: ['CyberArk Application Control', 'CrowdStrike Falcon', 'Endpoint hygiene', 'MFA', 'Data protection', 'Least privilege'],
+    tags: ['Terraform', 'IAM least-privilege', 'KMS', 'GitHub Actions', 'Policy-as-code', 'AWS security'],
   },
   {
-    title: 'Software Engineer - Persistent Systems',
+    title: 'Cloud Architect - Persistent Systems',
     meta: 'Pune · On-site',
-    year: '2022 - 2023',
+    year: '2022 - 2024',
     context: 'Persistent Systems - global IT services & digital engineering firm',
-    scope: 'Security-focused engineering across enterprise infrastructure - monitoring, automation, and database hardening.',
+    scope: 'End-to-end migration of an enterprise retail platform from on-premises to a containerized, highly available AWS architecture.',
     bullets: [
-      'Monitored authentication, system, and network logs in Splunk SIEM to detect brute-force attempts and anomalous access patterns across distributed infrastructure.',
-      'Automated network-exposure scanning with Python and PowerShell, flagging unauthorized open ports and generating daily security-posture reports for infrastructure teams.',
-      'Hardened the data layer with SQL Server TDE and role-based access control (RBAC), enforcing least-privilege data access.',
-      'Supported incident response - isolating affected servers via firewall rules, analyzing traffic in Wireshark, and driving post-incident security improvements.',
+      "Led the end-to-end migration of an enterprise retail client's monolithic on-premises application to AWS - owning the target architecture, migration plan and production cutover after the platform buckled under seasonal traffic.",
+      'Re-platformed onto ECS Fargate behind an Application Load Balancer, fronted with CloudFront and AWS WAF, and migrated the database to RDS Aurora via AWS DMS with a rehearsed, near-zero-downtime weekend cutover.',
+      'Automated the full stack - networking, compute, data and IAM - with reusable Terraform modules and GitHub Actions CI/CD, taking releases from multi-week cycles to on-demand deployments in under an hour.',
+      'Designed multi-AZ high availability with auto-scaling, automated backups and a DR strategy to defined RTO/RPO targets, monitored through CloudWatch dashboards and alarms.',
+      'Reduced monthly cloud cost by right-sizing compute and planning reserved capacity, hardening the account with IAM least-privilege and KMS encryption as standard.',
     ],
-    tags: ['Splunk SIEM', 'Python', 'PowerShell', 'SQL Server TDE', 'RBAC', 'Wireshark'],
+    tags: ['AWS migration', 'ECS Fargate', 'RDS Aurora', 'Terraform', 'CI/CD', 'Multi-AZ HA', 'DR'],
   },
 ];
 
@@ -161,12 +160,13 @@ export const trainingBadges = [
   'cloud-foundations',
 ];
 
-export const openTo = ['Cloud Engineer', 'Cloud Security Engineer', 'Solutions Architect', 'DevOps / Platform'];
+export const openTo = ['Cloud Architect', 'Solutions Architect', 'Cloud Security Engineer', 'DevOps / Platform'];
 
 export const skills: Record<string, string> = {
-  cloud: 'AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS',
-  iac: 'Terraform · CI/CD (GitHub Actions)',
-  security: 'CrowdStrike Falcon · CyberArk Application Control · Splunk SIEM · least privilege',
-  azure: 'Azure Arc · P2S VPN · Azure SQL · Cosmos DB · ZRS',
-  code: 'Python · PowerShell · SQL',
+  cloud: 'AWS · Azure · ECS Fargate · Amazon EKS · CloudFront · Route 53 · WAF',
+  iac: 'Terraform · AWS CDK · CloudFormation · GitHub Actions CI/CD',
+  security: 'IAM least-privilege · KMS · policy-as-code · encryption · cost governance',
+  data: 'RDS Aurora · ElastiCache · Azure SQL · Cosmos DB · S3',
+  ai: 'Amazon Connect · Lex · Polly · Transcribe · Bedrock',
+  code: 'Python · PowerShell · Bash · SQL',
 };

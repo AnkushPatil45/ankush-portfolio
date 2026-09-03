@@ -358,8 +358,8 @@ const cmds = {
     ),
   whoami: () =>
     print(
-      `<span class="em">Ankush Patil</span> - Cloud Engineer.
-AWS-first, security always. 4.0 GPA ×2 programs. Open to roles, on-site or remote.`,
+      `<span class="em">Ankush Patil</span> - Cloud Architect.
+AWS & Azure, security always. 4.0 GPA ×2 programs. Open to roles, on-site or remote.`,
       'ok'
     ),
   neofetch: () =>
@@ -367,28 +367,29 @@ AWS-first, security always. 4.0 GPA ×2 programs. Open to roles, on-site or remo
       `<span class="au">        ⬢⬢⬢⬢⬢</span>      <span class="em">ankush@patil-os</span>
 <span class="au">      ⬢⬢     ⬢⬢</span>    ─────────────────
 <span class="au">     ⬢⬢  Au   ⬢⬢</span>   <span class="ok">os</span>      PATIL/OS v2026.06
-<span class="au">     ⬢⬢  Ag   ⬢⬢</span>   <span class="ok">role</span>    Cloud Engineer
+<span class="au">     ⬢⬢  Ag   ⬢⬢</span>   <span class="ok">role</span>    Cloud Architect
 <span class="au">      ⬢⬢     ⬢⬢</span>    <span class="ok">host</span>    Remote · On-site
 <span class="au">        ⬢⬢⬢⬢⬢</span>      <span class="ok">gpa</span>     4.0 / 4.0 ×2 programs
                       <span class="ok">awards</span>  🥇 Ontario · 🥈 Canada (2026)
                       <span class="ok">certs</span>   AWS ×3 · Google · CrowdStrike ×28
-                      <span class="ok">stack</span>   AWS · Terraform · Azure · Falcon`,
+                      <span class="ok">stack</span>   AWS · Azure · Terraform · Kubernetes`,
       'ok'
     ),
   ls: () =>
     print(`about.md        medals.app      projects/
 credentials.db  experience.log  contact.sh`),
   skills: () =>
-    print(`cloud      AWS · ECS Fargate · EKS/IRSA · CloudFront · WAF · KMS
-iac        Terraform · CI/CD (GitHub Actions)
-security   CrowdStrike Falcon · CyberArk Application Control · Splunk SIEM · least privilege
-azure      Azure Arc · P2S VPN · Azure SQL · Cosmos DB · ZRS
-code       Python · PowerShell · SQL`),
+    print(`cloud      AWS · Azure · ECS Fargate · Amazon EKS · CloudFront · Route 53 · WAF
+iac        Terraform · AWS CDK · CloudFormation · GitHub Actions
+security   IAM least-privilege · KMS · policy-as-code · encryption · cost governance
+data       RDS Aurora · ElastiCache · Azure SQL · Cosmos DB · S3
+ai         Amazon Connect · Lex · Polly · Transcribe · Bedrock
+code       Python · PowerShell · Bash · SQL`),
   medals: () =>
     print(`<span class="au">🥇 GOLD   - Skills Ontario 2026</span> (provincial championships, cloud computing)
 <span class="ag">🥈 SILVER - Skills Canada Nationals 2026</span> (representing Ontario)`),
   projects: () =>
-    print(`house-of-north/   multi-AZ AWS e-commerce - ECS Fargate · Aurora · WAF · KMS · Terraform
+    print(`house-of-north/   live AWS e-commerce - ECS Fargate · Aurora · CloudFront · WAF · Amazon Connect
 build-roulette/   personal project on Engineering Decision Records - buildroulette.dev
 eks-irsa/         pod-level IAM on Amazon EKS - Helm, HPA
 azure-hybrid/     P2S VPN · Azure Arc · Azure SQL · Cosmos DB · ZRS`),
@@ -399,10 +400,10 @@ CrowdStrike ×28 - across 7 domains                                            <
   education: () =>
     print(`Seneca Polytechnic   Cloud Architecture & Administration · GPA 4.0   <span class="em">[2025-26]</span>
 Georgian College     PG Cybersecurity · GPA 4.0                  <span class="em">[2024-25]</span>
-SVKM's IoT, Dhule    B.Tech, Computer Engineering                <span class="em">[2022]</span>`),
+SVKM's IoT, Dhule    B.Tech, Computer Engineering                <span class="em">[2018-22]</span>`),
   experience: () =>
-    print(`2025       Cyber Security Analyst - Intact
-2022-2023  Software Engineer - Persistent Systems (Pune)`),
+    print(`2025       Cloud Security Engineer - Intact
+2022-2024  Cloud Architect - Persistent Systems (Pune)`),
   contact: () =>
     print(
       `email     <a href="mailto:ankushgp@icloud.com">ankushgp@icloud.com</a>
